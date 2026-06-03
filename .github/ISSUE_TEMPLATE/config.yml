@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Manifold documentation
+    url: https://github.com/lingphi-ai/manifold-support/tree/main/docs/en
+    about: Read the English docs before opening a support issue.
+  - name: Manifold 中文文档
+    url: https://github.com/lingphi-ai/manifold-support/tree/main/docs/zh
+    about: 提交问题前请先阅读中文文档。
+  - name: Lingphi AI
+    url: https://lingphi.com
+    about: Visit the company portal and product overview.

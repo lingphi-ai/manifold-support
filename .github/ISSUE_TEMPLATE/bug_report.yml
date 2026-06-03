@@ -1,0 +1,53 @@
+name: Bug report
+description: Report a reproducible Manifold problem.
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting a Manifold issue. Redact all API keys, license keys, and private prompts.
+  - type: input
+    id: version
+    attributes:
+      label: Manifold version
+      description: Use the version shown in the app or release file.
+      placeholder: "0.1.0"
+    validations:
+      required: true
+  - type: dropdown
+    id: os
+    attributes:
+      label: Operating system
+      options:
+        - macOS
+        - Windows
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: Provide the shortest sequence that triggers the bug.
+      placeholder: "1. Open Settings\n2. Add provider...\n3. Send request..."
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+      description: Include endpoint path, status code, and redacted error text when relevant.
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Redacted logs or screenshots
+      description: Optional. Remove keys, tokens, license data, and private prompts.

@@ -1,0 +1,31 @@
+name: Question
+description: Ask a Manifold usage, configuration, or support question.
+title: "[Question]: "
+labels: ["question"]
+body:
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - Quick start
+        - Provider setup
+        - Local gateway
+        - Routes
+        - Usage history
+        - Plans and licensing
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: question
+    attributes:
+      label: Question
+      description: Include what you tried and what result you expected.
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Optional. Include OS, Manifold version, provider type, and client.
