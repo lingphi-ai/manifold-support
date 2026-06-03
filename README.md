@@ -10,6 +10,7 @@ at the same local endpoint.
 
 ## Read the docs
 
+- Website: [lingphi-ai.github.io/manifold-support](https://lingphi-ai.github.io/manifold-support/)
 - English: [docs/en/index.md](docs/en/index.md)
 - 中文: [docs/zh/index.md](docs/zh/index.md)
 - Release notes: [docs/en/release-notes.md](docs/en/release-notes.md) /
@@ -37,8 +38,14 @@ keys, and private prompts before posting logs or configuration snippets.
 Run the docs guard before merging documentation changes:
 
 ```bash
+npm run build
 npm test
 ```
+
+`docs/en` and `docs/zh` are the source files. `npm run build` renders the public
+website into `dist/` with the same visual language as the Lingphi portal. GitHub
+Pages deploys that generated site from the workflow in
+[.github/workflows/pages.yml](.github/workflows/pages.yml).
 
 Keep this repository focused on Manifold only. Future Lingphi products should use
 their own support repositories so users can find the right docs and issues

@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "test": "node scripts/verify-support-docs.mjs"
+    "build": "node scripts/build-site.mjs",
+    "test": "node scripts/verify-support-docs.mjs",
+    "verify": "npm run build && npm test"
   }
 }
