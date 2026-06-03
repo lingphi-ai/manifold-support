@@ -21,6 +21,10 @@ entry point. This repository is the maintainable documentation set for Manifold:
 setup guides, concepts, API examples, pricing notes, troubleshooting, and user
 issues.
 
+Security note: Manifold can generate short-lived Local Session Keys for tools
+such as Claude Code. These keys only authenticate to the local Manifold gateway.
+Manifold does not sell, lease, or broker third-party model tokens.
+
 ## Support scope
 
 Use GitHub Issues for:

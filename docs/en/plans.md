@@ -12,6 +12,7 @@ Free is intended for individual local workflows and first-time setup.
 - OpenAI- and Anthropic-compatible local gateway.
 - 7-day usage window.
 - Local-only gateway bound to `127.0.0.1`.
+- Manual Local Session Keys for safer project-level development.
 
 ## Pro
 
@@ -24,6 +25,8 @@ providers and stable routing.
 - Model aliases.
 - Full usage history.
 - Priority support through GitHub Issues.
+- Advanced session policy, usage attribution, and bulk revoke are planned for
+  heavier workflows.
 
 Subscription handling is connected to Manifold licenses and will be enabled with
 public desktop downloads. Pricing and limits should be treated as product

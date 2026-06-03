@@ -10,6 +10,7 @@ Manifold 处于早期产品开发阶段。公开桌面版下载即将开放，�
 - `http://127.0.0.1:17680/v1` 本地网关快速开始。
 - 网关、服务商、模型 ID、Routes、fallback 和用量的核心概念。
 - `/v1/models`、`/v1/chat/completions` 和 `/v1/messages` 的 API 参考。
+- 本地会话密钥与非转售边界的安全文档。
 - Free 与 Pro 版本说明，包括 Pro 价格 `$2/year`。
 - 故障排查指南和结构化 issue 模板。
 

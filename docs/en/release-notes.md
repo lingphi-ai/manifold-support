@@ -11,6 +11,7 @@ Initial documentation includes:
 - Quick start for the local gateway at `http://127.0.0.1:17680/v1`.
 - Concepts for gateway, providers, model ids, routes, fallback, and usage.
 - API reference for `/v1/models`, `/v1/chat/completions`, and `/v1/messages`.
+- Security documentation for Local Session Keys and the non-resale boundary.
 - Free and Pro plan notes, including Pro at `$2/year`.
 - Troubleshooting guidance and structured issue templates.
 

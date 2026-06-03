@@ -19,6 +19,7 @@ const docs = [
   { slug: "concepts", file: "concepts.md", en: "Concepts", zh: "核心概念" },
   { slug: "configuration", file: "configuration.md", en: "Configuration", zh: "配置" },
   { slug: "api-reference", file: "api-reference.md", en: "API reference", zh: "API 参考" },
+  { slug: "security", file: "security.md", en: "Security", zh: "安全" },
   { slug: "plans", file: "plans.md", en: "Plans", zh: "版本与计划" },
   { slug: "troubleshooting", file: "troubleshooting.md", en: "Troubleshooting", zh: "故障排查" },
   { slug: "release-notes", file: "release-notes.md", en: "Release notes", zh: "发布说明" },

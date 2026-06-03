@@ -13,6 +13,7 @@ const requiredFiles = [
   "docs/en/concepts.md",
   "docs/en/configuration.md",
   "docs/en/api-reference.md",
+  "docs/en/security.md",
   "docs/en/plans.md",
   "docs/en/troubleshooting.md",
   "docs/en/release-notes.md",
@@ -21,6 +22,7 @@ const requiredFiles = [
   "docs/zh/concepts.md",
   "docs/zh/configuration.md",
   "docs/zh/api-reference.md",
+  "docs/zh/security.md",
   "docs/zh/plans.md",
   "docs/zh/troubleshooting.md",
   "docs/zh/release-notes.md",
@@ -36,9 +38,11 @@ const requiredBuiltFiles = [
   "dist/en/index.html",
   "dist/en/quick-start/index.html",
   "dist/en/api-reference/index.html",
+  "dist/en/security/index.html",
   "dist/zh/index.html",
   "dist/zh/quick-start/index.html",
   "dist/zh/api-reference/index.html",
+  "dist/zh/security/index.html",
   "dist/assets/styles.css",
   "dist/.nojekyll",
 ];
@@ -51,10 +55,14 @@ const mustMention = {
   "docs/zh/plans.md": ["Free", "Pro", "$2/year", "1 个远程服务商", "10 个远程服务商"],
   "docs/en/api-reference.md": ["/v1/models", "/v1/chat/completions", "/v1/messages"],
   "docs/zh/api-reference.md": ["/v1/models", "/v1/chat/completions", "/v1/messages"],
+  "docs/en/security.md": ["Local Session Keys", "Claude Code", "mf_session_", "does not sell, lease, or broker"],
+  "docs/zh/security.md": ["本地会话密钥", "Claude Code", "mf_session_", "不销售、租借或中转"],
   "site/styles.css": ["--ink", "--accent", "font-family", "container-x", "doc-shell"],
   ".github/workflows/pages.yml": ["github-pages", "npm run build", "actions/deploy-pages"],
   "dist/en/index.html": ["Lingphi", "Manifold Documentation", "doc-shell", "assets/styles.css"],
   "dist/zh/index.html": ["Lingphi", "Manifold 文档", "doc-shell", "assets/styles.css"],
+  "dist/en/security/index.html": ["Local Session Keys", "does not sell, lease, or broker", "mf_session_"],
+  "dist/zh/security/index.html": ["本地会话密钥", "不销售、租借或中转", "mf_session_"],
 };
 
 let failed = false;

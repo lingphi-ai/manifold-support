@@ -14,6 +14,8 @@ embeddings, and provider-specific passthrough.
 - [Configuration](configuration.md): set up local CLIs, remote APIs, endpoint
   details, and security settings.
 - [API reference](api-reference.md): paths, authentication, and curl examples.
+- [Security](security.md): local session keys, provider key isolation, and the
+  non-resale boundary.
 - [Plans](plans.md): Free and Pro limits.
 - [Troubleshooting](troubleshooting.md): common setup and provider problems.
 - [Release notes](release-notes.md): product status and changes.

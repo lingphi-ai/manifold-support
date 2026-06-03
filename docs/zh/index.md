@@ -11,6 +11,7 @@ embeddings，或使用服务商原生透传能力。
 - [核心概念](concepts.md)：理解网关、服务商、Routes、模型 ID 和用量历史。
 - [配置](configuration.md)：配置本地 CLI、远程 API、端点和安全选项。
 - [API 参考](api-reference.md)：路径、认证方式和 curl 示例。
+- [安全](security.md)：本地会话密钥、服务商密钥隔离，以及非转售边界。
 - [版本与计划](plans.md)：Free 与 Pro 的能力边界。
 - [故障排查](troubleshooting.md)：常见配置和服务商问题。
 - [发布说明](release-notes.md)：产品状态和变更记录。

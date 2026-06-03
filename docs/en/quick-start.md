@@ -18,8 +18,9 @@ first-run flow once the desktop app is installed.
 1. Launch Manifold and keep the tray app running.
 2. Open Settings and add a provider. Local CLI providers are auto-detected when
    possible; remote providers need a compatible base URL and API key.
-3. Open the Connect panel and copy the local base URL plus generated Manifold API
-   key.
+3. Open the Connect panel and copy the local base URL plus a generated Manifold
+   key. For project tools, prefer a short-lived Local Session Key instead of a
+   long-lived gateway key.
 4. Configure your client to use the base URL `http://127.0.0.1:17680/v1`.
 5. Test the connection by listing models.
 
@@ -32,7 +33,7 @@ Then send a chat request:
 
 ```bash
 curl http://127.0.0.1:17680/v1/chat/completions \
-  -H "Authorization: Bearer ldd_<your-key>" \
+  -H "Authorization: Bearer mf_session_<short-lived-key>" \
   -H "Content-Type: application/json" \
   -d '{"model":"manifold-default","messages":[{"role":"user","content":"Hello"}]}'
 ```
@@ -40,5 +41,7 @@ curl http://127.0.0.1:17680/v1/chat/completions \
 ## Security note
 
 Manifold binds the gateway to `127.0.0.1` and requires a bearer token on each
-request. Do not share the generated key in issues, screenshots, shell history, or
-support logs.
+request. Provider API keys stay in Manifold local storage. Local Session Keys are
+scoped credentials for the Manifold localhost gateway; they are not provider API
+keys and they are not model credits. Do not share generated keys in issues,
+screenshots, shell history, or support logs.

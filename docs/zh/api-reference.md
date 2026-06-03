@@ -12,6 +12,12 @@ http://127.0.0.1:17680/v1
 Authorization: Bearer ldd_<your-key>
 ```
 
+对于开发工程中的工具，bearer 值也可以是短期本地会话密钥：
+
+```text
+Authorization: Bearer mf_session_<short-lived-key>
+```
+
 当客户端支持时，Anthropic 风格请求也可以使用 `x-api-key`。
 
 ## 端点
@@ -44,3 +50,7 @@ curl http://127.0.0.1:17680/v1/messages \
 
 错误会使用包含 code、message 和 type 的结构化响应。提交 API 问题时，请附上
 路径、方法、响应状态码和隐藏敏感信息后的响应体。
+
+Manifold API 不会把真实服务商 API key 返回给客户端。客户端只把 Manifold 网关
+key 或本地会话密钥发给 `127.0.0.1`；Manifold 再由本地应用调用用户已配置的
+服务商。

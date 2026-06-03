@@ -12,6 +12,12 @@ Authentication:
 Authorization: Bearer ldd_<your-key>
 ```
 
+For project-scoped tools, the bearer value can be a short-lived Local Session Key:
+
+```text
+Authorization: Bearer mf_session_<short-lived-key>
+```
+
 Anthropic-style clients can also use `x-api-key` when supported by the client.
 
 ## Endpoints
@@ -44,3 +50,7 @@ curl http://127.0.0.1:17680/v1/messages \
 
 Errors use a structured body with a code, message, and type. If you report an API
 issue, include the path, method, response status, and redacted response body.
+
+Provider API keys are never sent to clients as part of the Manifold API. Clients
+only send a Manifold gateway key or Local Session Key to `127.0.0.1`; Manifold
+then calls the user-configured provider from the local app.
