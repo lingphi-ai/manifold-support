@@ -10,7 +10,8 @@ at the same local endpoint.
 
 ## Read the docs
 
-- Website: [lingphi-ai.github.io/manifold-support](https://lingphi-ai.github.io/manifold-support/)
+- Website: [doc.lingphi.ai/manifold](https://doc.lingphi.ai/manifold/)
+- GitHub Pages upstream: [lingphi-ai.github.io/manifold-support](https://lingphi-ai.github.io/manifold-support/)
 - English: [docs/en/index.md](docs/en/index.md)
 - 中文: [docs/zh/index.md](docs/zh/index.md)
 - Release notes: [docs/en/release-notes.md](docs/en/release-notes.md) /
@@ -50,6 +51,20 @@ npm test
 website into `dist/` with the same visual language as the Lingphi portal. GitHub
 Pages deploys that generated site from the workflow in
 [.github/workflows/pages.yml](.github/workflows/pages.yml).
+
+The Cloudflare Worker in [worker/docs-gateway.js](worker/docs-gateway.js)
+provides the product documentation path:
+
+- `https://doc.lingphi.ai/manifold/` proxies this GitHub Pages site.
+- `https://doc.lingphi.com/manifold/` redirects to the `.ai` canonical host.
+- Future products can add their own path routes without changing this
+  repository's support and issue scope.
+
+Deploy the gateway after Cloudflare auth is available:
+
+```bash
+npm run deploy:gateway
+```
 
 Keep this repository focused on Manifold only. Future Lingphi products should use
 their own support repositories so users can find the right docs and issues

@@ -1,0 +1,13 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "lingphi-docs-gateway",
+  "main": "worker/docs-gateway.js",
+  "compatibility_date": "2026-06-04",
+  "routes": [
+    { "pattern": "doc.lingphi.ai", "custom_domain": true },
+    { "pattern": "doc.lingphi.com", "custom_domain": true }
+  ],
+  "observability": {
+    "enabled": true
+  }
+}

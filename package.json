@@ -2,9 +2,15 @@
   "name": "manifold-support",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "build": "node scripts/build-site.mjs",
-    "test": "node scripts/verify-support-docs.mjs",
-    "verify": "npm run build && npm test"
+    "test": "node scripts/verify-support-docs.mjs && node scripts/verify-docs-gateway.mjs",
+    "verify": "npm run build && npm test",
+    "deploy:gateway": "WRANGLER_SEND_METRICS=false wrangler deploy",
+    "deploy:gateway:dry-run": "WRANGLER_SEND_METRICS=false wrangler deploy --dry-run --outdir /tmp/lingphi-docs-gateway-worker"
+  },
+  "devDependencies": {
+    "wrangler": "^4.97.0"
   }
 }
