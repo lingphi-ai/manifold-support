@@ -10,7 +10,7 @@ const site = {
   endpoint: "http://127.0.0.1:17680/v1",
   repo: "https://github.com/lingphi-ai/manifold-support",
   issues: "https://github.com/lingphi-ai/manifold-support/issues/new/choose",
-  portal: "https://lingphi.com",
+  portal: "https://www.lingphi.com",
 };
 
 const docs = [

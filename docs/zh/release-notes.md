@@ -1,9 +1,31 @@
 # 发布说明
 
+## v0.1.1 服务商目录与桌面构建目标
+
+日期：2026-06-05
+
+用户可见变化：
+
+- 桌面构建目标覆盖 macOS arm64、macOS x64、Windows x64 和 Windows arm64。
+  早期构建可能仍未签名；只有在文件来自可信 Lingphi 发布源时，才应继续通过
+  操作系统的安全提示流程。
+- 添加服务商流程收敛为 **Local CLI**、**Remote** 和 **Custom**。Remote
+  服务商从下拉框选择，不再使用过宽的多标签布局。
+- Manifold 内置 27 个 quick-add 服务商预设。目录包括 OpenAI、Anthropic、
+  Gemini API、DeepSeek、GLM、OpenRouter、Qwen、Moonshot/Kimi、
+  Perplexity、Fireworks、Cerebras、Cohere、NVIDIA NIM、SambaNova、
+  MiniMax、Doubao、ERNIE、Hunyuan、StepFun、SiliconFlow 等托管 API。
+- Ollama、LM Studio、vLLM 成为内置本地服务器预设。它们使用 localhost 上的
+  OpenAI 兼容 URL，并在本地服务器本身不要求认证时允许免 key 上游访问。
+- 中文界面对有明确中文名称的内置服务商做了品牌本地化，例如 GLM、Qwen、
+  DeepSeek、Moonshot/Kimi。
+- 本地会话密钥生成器不再显示 Project 字段。当前 UI 只要求标签和有效期；
+  项目策略和 allow-list 属于明确暴露这些控制项的构建版本。
+
 ## v0.1.0 早期产品文档
 
-Manifold 处于早期产品开发阶段。公开桌面版下载即将开放，本仓库现在作为该产品
-的公开支持与文档主页。
+Manifold 处于早期产品开发阶段。这个初始文档版本在上面的安装包与服务商目录
+工作之前，建立了该产品的公开支持与文档主页。
 
 初始文档包括：
 

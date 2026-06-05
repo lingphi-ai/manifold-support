@@ -54,3 +54,7 @@ issue, include the path, method, response status, and redacted response body.
 Provider API keys are never sent to clients as part of the Manifold API. Clients
 only send a Manifold gateway key or Local Session Key to `127.0.0.1`; Manifold
 then calls the user-configured provider from the local app.
+
+Local-server presets such as Ollama, LM Studio, and vLLM may have no upstream
+API key. In that case Manifold sends no upstream auth header, but the client
+still has to authenticate to Manifold with a gateway key or Local Session Key.

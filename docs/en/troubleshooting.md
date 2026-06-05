@@ -18,6 +18,22 @@ it is authenticated. For remote providers, verify the base URL, API key, and
 model list. Some providers expose OpenAI-compatible and Anthropic-compatible
 URLs separately.
 
+For Ollama, LM Studio, or vLLM, confirm the local server is running on the preset
+URL before refreshing models:
+
+- Ollama: `http://localhost:11434/v1`
+- LM Studio: `http://localhost:1234/v1`
+- vLLM: `http://localhost:8000/v1`
+
+These presets can be keyless when the local server allows keyless access. If the
+server requires auth, add the key in Manifold and test again.
+
+## Cannot add another remote provider
+
+Free includes 1 remote or local-server provider. Local CLI providers do not count
+against that limit, but hosted API presets and local-server presets do. Upgrade
+to Pro when you need up to 10 remote/local-server providers.
+
 ## Routes do not fail over
 
 Fallback is a Pro capability. Also confirm the target providers support the

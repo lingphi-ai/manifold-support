@@ -23,8 +23,24 @@ Anthropic 风格客户端也可以使用兼容的 key header。
 
 ## 远程 API 服务商
 
-远程服务商需要名称、兼容 base URL、模型列表和 API key。Free 包含 1 个远程
-服务商；Pro 最多支持 10 个远程服务商。
+添加服务商表单被收敛成三个入口：
+
+- **Local CLI**：同一台机器上已安装并认证的 Claude、Codex 或 Gemini。
+- **Remote**：内置预设下拉框。
+- **Custom**：手动填写 provider id、显示名称、兼容 base URL 和模型列表。
+
+Manifold `v0.1.1` 内置 27 个 quick-add 预设，覆盖托管 API 与本地服务器运行
+时。托管预设包括 OpenAI、Anthropic、Gemini API、DeepSeek、GLM、Mistral、
+Groq、xAI、OpenRouter、Together、Moonshot/Kimi、Qwen、Perplexity、
+Fireworks、Cerebras、Cohere、NVIDIA NIM、SambaNova、MiniMax、Doubao、
+ERNIE、Hunyuan、StepFun 和 SiliconFlow。
+
+Ollama、LM Studio、vLLM 是本地服务器预设。它们指向 localhost 上的
+OpenAI 兼容 URL；如果本地服务器本身不要求认证，可以不填写 API key。如果
+本地服务器要求 key，请在 Manifold 中填写，Manifold 会作为 bearer auth 发送。
+
+Free 包含 1 个远程或本地服务器服务商；Pro 最多支持 10 个远程或本地服务器
+服务商。本地 CLI 服务商不计入这个远程服务商限制。
 
 ## Routes 与别名
 
@@ -37,6 +53,10 @@ Pro 能力。
 本地会话密钥由 Manifold 在本机生成，供 Claude Code、测试脚本或项目内工具
 访问 Manifold localhost 网关。它只认证到 Manifold 本地网关，不暴露、不替代、
 不销售、租借或中转服务商 API key。项目结束或密钥可能进入日志时应立即撤销。
+
+当前生成器只要求标签和有效期。项目策略、allow-list、按项目归因和批量撤销
+属于 Pro 方向的策略能力；除非你安装的 Manifold 版本在 UI 中明确显示这些
+控制项，否则不要假设它们已经可用。
 
 ## 语言
 

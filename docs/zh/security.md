@@ -9,6 +9,10 @@ Manifold 的定位是本地访问层，不是 token 市场。它帮助开发者�
 Claude Code、测试脚本、项目脚本和其它需要调用 Manifold localhost 网关的
 客户端，用来在开发工程中验证正式业务逻辑，同时避免真实 API key 泄漏。
 
+当前生成器只要求标签和有效期。它不再显示 Project 字段，因为项目策略和
+allow-list 尚未在已发布 UI 中暴露。除非你安装的 Manifold 版本明确显示这些
+控制项，否则请把项目策略相关说明视为后续策略能力。
+
 本地会话密钥可以这样使用：
 
 ```bash
@@ -23,6 +27,7 @@ Anthropic、OpenAI、DeepSeek、OpenRouter 或其它服务商 API key。
 
 - Manifold 本地网关凭证。
 - 短期有效，可以撤销。
+- 在 Manifold 中以 hash 存储，生成时只显示一次。
 - 适合按项目或按开发任务生成。
 - 用来让服务商凭证不进入源码和项目本地 env 文件。
 - 当 Claude Code 等工具需要 Anthropic 风格兼容端点时，可以使用它替代真实
@@ -50,5 +55,9 @@ Anthropic、OpenAI、DeepSeek、OpenRouter 或其它服务商 API key。
 服务商凭证留在用户自己的机器上。项目工具只拿到访问 Manifold localhost 网关
 的受限凭证。Manifold 再由本地桌面应用把请求路由到用户已配置的服务商。这是
 凭证隔离和本地访问控制，不是 token 转售。
+
+对于 Ollama、LM Studio、vLLM 这类本地服务器预设，上游本身可能不需要 API
+key。这不会改变客户端边界：客户端仍然认证到 Manifold，Manifold 仍然只绑定
+`127.0.0.1`。
 
 提交 issue 时，请同时隐藏服务商 key 和本地会话密钥。

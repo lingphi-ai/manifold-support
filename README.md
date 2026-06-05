@@ -8,6 +8,11 @@ Anthropic-compatible gateway at `http://127.0.0.1:17680/v1`. Users can connect
 local CLI providers and remote API providers once, then point compatible clients
 at the same local endpoint.
 
+The current product docs track Manifold `v0.1.1`. That release line adds
+multi-architecture desktop build targets, a Remote provider dropdown with 27
+quick-add presets, keyless local-server presets for Ollama, LM Studio and vLLM,
+and the simplified Local Session Key generator for project tools.
+
 ## Read the docs
 
 - Website: [doc.lingphi.ai/manifold](https://doc.lingphi.ai/manifold/)
@@ -17,7 +22,7 @@ at the same local endpoint.
 - Release notes: [docs/en/release-notes.md](docs/en/release-notes.md) /
   [docs/zh/release-notes.md](docs/zh/release-notes.md)
 
-The company portal at [lingphi.com](https://lingphi.com) provides a short product
+The company portal at [www.lingphi.com](https://www.lingphi.com) provides a short product
 entry point. This repository is the maintainable documentation set for Manifold:
 setup guides, concepts, API examples, pricing notes, troubleshooting, and user
 issues.

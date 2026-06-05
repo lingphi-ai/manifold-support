@@ -16,6 +16,22 @@
 服务商，请检查 base URL、API key 和模型列表。有些服务商会分别提供 OpenAI
 兼容 URL 和 Anthropic 兼容 URL。
 
+对于 Ollama、LM Studio 或 vLLM，请先确认本地服务器已经在预设 URL 上运行，
+再刷新模型：
+
+- Ollama: `http://localhost:11434/v1`
+- LM Studio: `http://localhost:1234/v1`
+- vLLM: `http://localhost:8000/v1`
+
+如果本地服务器允许免 key 访问，这些预设可以不填写 API key。如果服务器要求
+认证，请在 Manifold 中填写 key 后重新测试。
+
+## 无法再添加远程服务商
+
+Free 包含 1 个远程或本地服务器服务商。本地 CLI 服务商不计入该限制，但托管
+API 预设和本地服务器预设会计入。需要最多 10 个远程/本地服务器服务商时，请
+升级到 Pro。
+
 ## Routes 没有 fallback
 
 Fallback 属于 Pro 能力。同时要确认目标服务商支持请求格式。不能处理

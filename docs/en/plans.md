@@ -8,7 +8,9 @@ both tiers because the core value is a reliable local gateway.
 Free is intended for individual local workflows and first-time setup.
 
 - Unlimited local CLI providers.
-- 1 remote provider.
+- 1 remote or local-server provider.
+- 27 quick-add provider presets, including hosted APIs plus Ollama, LM Studio
+  and vLLM local-server presets.
 - OpenAI- and Anthropic-compatible local gateway.
 - 7-day usage window.
 - Local-only gateway bound to `127.0.0.1`.
@@ -19,7 +21,7 @@ Free is intended for individual local workflows and first-time setup.
 Pro is priced at **$2/year** and is intended for users who depend on multiple
 providers and stable routing.
 
-- Up to 10 remote providers.
+- Up to 10 remote or local-server providers.
 - Routes with weighted targets.
 - Fallback across compatible providers.
 - Model aliases.
@@ -32,3 +34,7 @@ Subscription handling is connected to Manifold licenses and will be enabled with
 public desktop downloads. Pricing and limits should be treated as product
 documentation; if the app behavior differs, open an issue with the version and a
 short reproduction.
+
+The remote provider limit applies to hosted API presets and local-server presets
+because both are configured as HTTP providers. It does not limit local CLI
+providers such as Claude, Codex, or Gemini.

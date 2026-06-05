@@ -54,3 +54,7 @@ curl http://127.0.0.1:17680/v1/messages \
 Manifold API 不会把真实服务商 API key 返回给客户端。客户端只把 Manifold 网关
 key 或本地会话密钥发给 `127.0.0.1`；Manifold 再由本地应用调用用户已配置的
 服务商。
+
+Ollama、LM Studio、vLLM 这类本地服务器预设可以没有上游 API key。在这种情况
+下 Manifold 不会向上游发送 auth header，但客户端仍然必须使用 Manifold 网关
+key 或本地会话密钥认证到 Manifold。

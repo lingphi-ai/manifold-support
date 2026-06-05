@@ -5,6 +5,24 @@ single compatible endpoint at `http://127.0.0.1:17680/v1`. Compatible clients ca
 use that endpoint for model listing, OpenAI Chat Completions, Anthropic Messages,
 embeddings, and provider-specific passthrough.
 
+These docs track the `v0.1.1` product line. The latest app changes add
+multi-architecture desktop build targets, a collapsed provider add flow, 27
+quick-add provider presets, keyless local-server presets for Ollama, LM Studio
+and vLLM, localized provider names in Chinese, and the simplified Local Session
+Key generator for project tools.
+
+## Current capabilities
+
+- Local CLI providers: Claude, Codex, and Gemini when those CLIs are installed
+  and authenticated on the same machine.
+- Hosted API presets: OpenAI, Anthropic, Gemini API, DeepSeek, GLM, OpenRouter,
+  Qwen, Moonshot/Kimi, Perplexity, Fireworks, Cerebras, Cohere, NVIDIA NIM,
+  SambaNova, MiniMax, Doubao, ERNIE, Hunyuan, StepFun, SiliconFlow, and more.
+- Local-server presets: Ollama, LM Studio, and vLLM using OpenAI-compatible
+  localhost URLs. These can run without an API key when the local server itself
+  does not require one.
+- Desktop build targets: macOS arm64, macOS x64, Windows x64, and Windows arm64.
+
 ## Start here
 
 - [Quick start](quick-start.md): launch Manifold, add a provider, and send a

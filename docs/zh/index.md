@@ -5,6 +5,22 @@ Manifold 是一个本地 AI 模型网关。它以桌面托盘应用运行，并�
 列出模型、发送 OpenAI Chat Completions、发送 Anthropic Messages、请求
 embeddings，或使用服务商原生透传能力。
 
+本文档跟随 `v0.1.1` 产品线。最新应用变更包括多架构桌面构建目标、收敛后的
+添加服务商流程、27 个 quick-add 服务商预设、Ollama / LM Studio / vLLM
+免 key 本地服务器预设、中文界面的服务商品牌本地化，以及面向项目工具的简化
+本地会话密钥生成器。
+
+## 当前能力
+
+- 本地 CLI 服务商：在同一台机器上已安装并认证的 Claude、Codex、Gemini。
+- 托管 API 预设：OpenAI、Anthropic、Gemini API、DeepSeek、GLM、
+  OpenRouter、Qwen、Moonshot/Kimi、Perplexity、Fireworks、Cerebras、
+  Cohere、NVIDIA NIM、SambaNova、MiniMax、Doubao、ERNIE、Hunyuan、
+  StepFun、SiliconFlow 等。
+- 本地服务器预设：Ollama、LM Studio、vLLM，使用 OpenAI 兼容的 localhost
+  URL。当本地服务器本身不要求认证时，可以不填写 API key。
+- 桌面构建目标：macOS arm64、macOS x64、Windows x64、Windows arm64。
+
 ## 从这里开始
 
 - [快速开始](quick-start.md)：启动 Manifold、添加服务商并发送第一个请求。

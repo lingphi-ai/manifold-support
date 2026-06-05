@@ -11,6 +11,11 @@ running on your machine. They are useful for Claude Code, test runners, project
 scripts, and other clients that need to call the Manifold localhost gateway while
 you validate real business logic in a development project.
 
+The current generator asks for a label and an expiry. It no longer asks for a
+Project field because project policies and allow-lists are not exposed in the
+shipping UI yet. Treat any project-policy language as future policy work unless
+your installed Manifold build explicitly shows those controls.
+
 A Local Session Key can look like this:
 
 ```bash
@@ -25,6 +30,7 @@ real Anthropic, OpenAI, DeepSeek, OpenRouter, or other provider API key.
 
 - Local gateway credentials for Manifold.
 - Short-lived and revocable.
+- Stored as hashes by Manifold and shown once when generated.
 - Suitable for per-project development use.
 - A way to keep provider credentials out of source code and local project env
   files.
@@ -58,5 +64,9 @@ Provider credentials stay on the user's machine. Project tools only receive a
 scoped key for the Manifold localhost gateway. Manifold then routes requests to
 the user-configured providers from the local desktop app. This is credential
 isolation and local access control, not token resale.
+
+For local-server presets such as Ollama, LM Studio, and vLLM, the upstream may
+run without its own API key. That does not change the client boundary: clients
+still authenticate to Manifold, and Manifold still stays bound to `127.0.0.1`.
 
 When filing issues, redact both provider keys and Local Session Keys.
