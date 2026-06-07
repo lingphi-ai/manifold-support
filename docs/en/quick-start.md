@@ -3,10 +3,19 @@
 This guide gets a compatible client talking to Manifold through the local gateway
 at `http://127.0.0.1:17680/v1`.
 
-Manifold `v0.1.1` targets macOS Apple Silicon, macOS Intel, Windows x64, and
-Windows arm64 builds. Early builds may be unsigned: on macOS use right-click
-Open if Gatekeeper blocks the app; on Windows choose the SmartScreen "More info"
-path only when the file came from a trusted Lingphi release.
+Manifold `v0.1.2` provides public builds for macOS Apple Silicon, macOS Intel,
+Windows x64, and Windows arm64. Early builds may be unsigned: on macOS use
+right-click Open if Gatekeeper blocks the app; on Windows choose the SmartScreen
+"More info" path only when the file came from a trusted Lingphi release.
+
+Public installers and archives are distributed from the manifold-support release
+page:
+
+https://github.com/lingphi-ai/manifold-support/releases/latest
+
+You can also pick the matching platform directly from the Lingphi product page:
+
+https://www.lingphi.com/manifold/#download
 
 ## Requirements
 

@@ -1,5 +1,32 @@
 # Release Notes
 
+Public Manifold installers, archives, and user-visible release notes are
+published from the latest manifold-support release:
+
+https://github.com/lingphi-ai/manifold-support/releases/latest
+
+The private Manifold source repository remains internal and is not the public
+download destination.
+
+## v0.1.2 public desktop release
+
+Date: 2026-06-07
+
+Public assets:
+
+Release page: https://github.com/lingphi-ai/manifold-support/releases/tag/v0.1.2
+
+- `Manifold-0.1.2-mac-arm64.dmg`
+- `Manifold-0.1.2-mac-arm64.zip`
+- `Manifold-0.1.2-mac-x64.dmg`
+- `Manifold-0.1.2-mac-x64.zip`
+- `Manifold-0.1.2-win-arm64.zip`
+- `Manifold-0.1.2-win-x64.zip`
+
+Use this release page as the public download entry for Manifold. The private
+Manifold source repository remains internal; users should not need access to it
+to install or report issues for the desktop app.
+
 ## v0.1.1 provider catalog and desktop build targets
 
 Date: 2026-06-05
@@ -42,5 +69,6 @@ Initial documentation includes:
 
 Future release notes should record user-visible changes: installer availability,
 supported operating systems, provider behavior, API changes, plan changes, and
-known support issues. Keep entries concise and link to related issues when a
-change fixes a reported problem.
+known support issues. Attach public binaries and checksum files, when published,
+to the corresponding manifold-support release. Keep entries concise and link to
+related issues when a change fixes a reported problem.

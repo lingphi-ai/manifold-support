@@ -5,11 +5,11 @@ single compatible endpoint at `http://127.0.0.1:17680/v1`. Compatible clients ca
 use that endpoint for model listing, OpenAI Chat Completions, Anthropic Messages,
 embeddings, and provider-specific passthrough.
 
-These docs track the `v0.1.1` product line. The latest app changes add
-multi-architecture desktop build targets, a collapsed provider add flow, 27
-quick-add provider presets, keyless local-server presets for Ollama, LM Studio
-and vLLM, localized provider names in Chinese, and the simplified Local Session
-Key generator for project tools.
+These docs track the current `v0.1.2` public release. The latest app changes add
+public desktop downloads, a collapsed provider add flow, 27 quick-add provider
+presets, keyless local-server presets for Ollama, LM Studio and vLLM, localized
+provider names in Chinese, and the simplified Local Session Key generator for
+project tools.
 
 ## Current capabilities
 
@@ -22,6 +22,21 @@ Key generator for project tools.
   localhost URLs. These can run without an API key when the local server itself
   does not require one.
 - Desktop build targets: macOS arm64, macOS x64, Windows x64, and Windows arm64.
+
+## Downloads and releases
+
+Public Manifold desktop downloads are published from this repository's latest
+GitHub Release:
+
+https://github.com/lingphi-ai/manifold-support/releases/latest
+
+Use that page for public installers, archives, and user-visible release notes.
+The private Manifold source repository remains internal and should not be used as
+the public download destination.
+
+The Lingphi portal also provides direct platform downloads:
+
+https://www.lingphi.com/manifold/#download
 
 ## Start here
 
@@ -36,7 +51,7 @@ Key generator for project tools.
   non-resale boundary.
 - [Plans](plans.md): Free and Pro limits.
 - [Troubleshooting](troubleshooting.md): common setup and provider problems.
-- [Release notes](release-notes.md): product status and changes.
+- [Release notes](release-notes.md): product status, downloads, and changes.
 
 ## Support
 

@@ -8,10 +8,15 @@ Anthropic-compatible gateway at `http://127.0.0.1:17680/v1`. Users can connect
 local CLI providers and remote API providers once, then point compatible clients
 at the same local endpoint.
 
-The current product docs track Manifold `v0.1.1`. That release line adds
-multi-architecture desktop build targets, a Remote provider dropdown with 27
-quick-add presets, keyless local-server presets for Ollama, LM Studio and vLLM,
-and the simplified Local Session Key generator for project tools.
+The current public release is Manifold `v0.1.2`. Use the latest-release link for
+downloads:
+
+https://github.com/lingphi-ai/manifold-support/releases/latest
+
+It provides macOS arm64/x64 DMG and ZIP packages plus Windows x64/arm64 ZIP
+packages. The current release line also includes a Remote provider dropdown with
+27 quick-add presets, keyless local-server presets for Ollama, LM Studio and
+vLLM, and the simplified Local Session Key generator for project tools.
 
 ## Read the docs
 
@@ -23,9 +28,10 @@ and the simplified Local Session Key generator for project tools.
   [docs/zh/release-notes.md](docs/zh/release-notes.md)
 
 The company portal at [www.lingphi.com](https://www.lingphi.com) provides a short product
-entry point. This repository is the maintainable documentation set for Manifold:
-setup guides, concepts, API examples, pricing notes, troubleshooting, and user
-issues.
+entry point and direct per-platform downloads at
+[www.lingphi.com/manifold/#download](https://www.lingphi.com/manifold/#download).
+This repository is the maintainable documentation set for Manifold: setup
+guides, concepts, API examples, pricing notes, troubleshooting, and user issues.
 
 Security note: Manifold can generate short-lived Local Session Keys for tools
 such as Claude Code. These keys only authenticate to the local Manifold gateway.
@@ -74,3 +80,9 @@ npm run deploy:gateway
 Keep this repository focused on Manifold only. Future Lingphi products should use
 their own support repositories so users can find the right docs and issues
 without crossing product boundaries.
+
+Release asset rule: the Lingphi portal links directly to GitHub latest-release
+assets for each supported platform. When publishing a new Manifold release,
+either update the portal asset filenames or upload stable alias filenames such as
+`Manifold-mac-arm64.dmg`, `Manifold-mac-x64.dmg`, `Manifold-win-x64.zip`, and
+`Manifold-win-arm64.zip`.

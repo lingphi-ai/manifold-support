@@ -34,8 +34,8 @@ The Add provider form is intentionally compact:
 - **Custom**: a manually entered provider id, display label, compatible base
   URL, and model list.
 
-Manifold `v0.1.1` includes 27 quick-add presets across hosted APIs and
-local-server runtimes. Hosted presets include OpenAI, Anthropic, Gemini API,
+Manifold includes 27 quick-add presets across hosted APIs and local-server
+runtimes. Hosted presets include OpenAI, Anthropic, Gemini API,
 DeepSeek, GLM, Mistral, Groq, xAI, OpenRouter, Together, Moonshot/Kimi, Qwen,
 Perplexity, Fireworks, Cerebras, Cohere, NVIDIA NIM, SambaNova, MiniMax, Doubao,
 ERNIE, Hunyuan, StepFun, and SiliconFlow.

@@ -3,10 +3,18 @@
 本指南帮助你通过 `http://127.0.0.1:17680/v1` 让兼容客户端连接到
 Manifold 本地网关。
 
-Manifold `v0.1.1` 面向 macOS Apple Silicon、macOS Intel、Windows x64 和
-Windows arm64 构建。早期构建可能尚未签名：macOS 被 Gatekeeper 拦截时可以
+Manifold `v0.1.2` 提供 macOS Apple Silicon、macOS Intel、Windows x64 和
+Windows arm64 公开构建。早期构建可能尚未签名：macOS 被 Gatekeeper 拦截时可以
 使用右键 Open；Windows 出现 SmartScreen 时，只应在文件来自可信 Lingphi
 发布源的情况下继续。
+
+公开安装包和压缩包通过 manifold-support 的 release 页面分发：
+
+https://github.com/lingphi-ai/manifold-support/releases/latest
+
+也可以直接在 Lingphi 产品页按平台选择对应下载：
+
+https://www.lingphi.com/manifold/#download
 
 ## 准备条件
 

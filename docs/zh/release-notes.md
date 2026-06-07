@@ -1,5 +1,30 @@
 # 发布说明
 
+Manifold 的公开安装包、压缩包和用户可见的发布说明发布在
+manifold-support latest Release：
+
+https://github.com/lingphi-ai/manifold-support/releases/latest
+
+私有 Manifold 源码仓库保持内部使用，不作为公开下载入口。
+
+## v0.1.2 公开桌面版本
+
+日期：2026-06-07
+
+公开资产：
+
+版本页面：https://github.com/lingphi-ai/manifold-support/releases/tag/v0.1.2
+
+- `Manifold-0.1.2-mac-arm64.dmg`
+- `Manifold-0.1.2-mac-arm64.zip`
+- `Manifold-0.1.2-mac-x64.dmg`
+- `Manifold-0.1.2-mac-x64.zip`
+- `Manifold-0.1.2-win-arm64.zip`
+- `Manifold-0.1.2-win-x64.zip`
+
+该 release 页面是 Manifold 的公开下载入口。私有 Manifold 源码仓库保持内部
+使用；用户安装桌面应用或提交 issue 时不需要访问源码仓库。
+
 ## v0.1.1 服务商目录与桌面构建目标
 
 日期：2026-06-05
@@ -37,7 +62,8 @@ Manifold 处于早期产品开发阶段。这个初始文档版本在上面的�
 - 故障排查指南和结构化 issue 模板。
 
 未来发布说明应记录用户可见的变化：安装包开放、支持的操作系统、服务商行为、
-API 变化、版本限制变化和已知支持问题。条目应保持简洁，并在修复用户报告的
+API 变化、版本限制变化和已知支持问题。公开二进制文件以及已经发布的校验文件
+应附加到对应的 manifold-support release。条目应保持简洁，并在修复用户报告的
 问题时链接相关 issue。
 
 ## 维护规则

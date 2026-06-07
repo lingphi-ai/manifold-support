@@ -29,8 +29,8 @@ Anthropic 风格客户端也可以使用兼容的 key header。
 - **Remote**：内置预设下拉框。
 - **Custom**：手动填写 provider id、显示名称、兼容 base URL 和模型列表。
 
-Manifold `v0.1.1` 内置 27 个 quick-add 预设，覆盖托管 API 与本地服务器运行
-时。托管预设包括 OpenAI、Anthropic、Gemini API、DeepSeek、GLM、Mistral、
+Manifold 内置 27 个 quick-add 预设，覆盖托管 API 与本地服务器运行时。
+托管预设包括 OpenAI、Anthropic、Gemini API、DeepSeek、GLM、Mistral、
 Groq、xAI、OpenRouter、Together、Moonshot/Kimi、Qwen、Perplexity、
 Fireworks、Cerebras、Cohere、NVIDIA NIM、SambaNova、MiniMax、Doubao、
 ERNIE、Hunyuan、StepFun 和 SiliconFlow。
