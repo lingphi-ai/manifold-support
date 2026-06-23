@@ -4,19 +4,22 @@ Public documentation and support intake for **Manifold**, the AI Model Hub from
 Lingphi AI.
 
 Manifold is a desktop tray app that exposes one local OpenAI- and
-Anthropic-compatible gateway at `http://127.0.0.1:17680/v1`. Users can connect
-local CLI providers and remote API providers once, then point compatible clients
-at the same local endpoint.
+Anthropic-compatible gateway at `http://127.0.0.1:17680/v1`. Users connect local
+CLI providers, hosted API providers, or local model servers once, then point
+compatible clients at the same local endpoint.
 
-The current public release is Manifold `v0.1.2`. Use the latest-release link for
-downloads:
+These docs now track the Manifold `v0.1.12` product behavior in the private
+source repository. The latest public installer is served from the public
+support release channel:
 
 https://github.com/lingphi-ai/manifold-support/releases/latest
 
-It provides macOS arm64/x64 DMG and ZIP packages plus Windows x64/arm64 ZIP
-packages. The current release line also includes a Remote provider dropdown with
-27 quick-add presets, keyless local-server presets for Ollama, LM Studio and
-vLLM, and the simplified Local Session Key generator for project tools.
+The public installer channel now mirrors the current releases (`v0.1.12` and
+newer). It provides macOS arm64/x64 DMG and ZIP packages plus Windows x64/arm64
+ZIP packages. The `v0.1.12` docs cover the newer provider model catalog refresh,
+built-in local-server presets such as Ollama, LM Studio, and vLLM, Pro Routes,
+session-key policy controls, gateway API surface, and release mirroring
+workflow.
 
 ## Read the docs
 
@@ -27,14 +30,14 @@ vLLM, and the simplified Local Session Key generator for project tools.
 - Release notes: [docs/en/release-notes.md](docs/en/release-notes.md) /
   [docs/zh/release-notes.md](docs/zh/release-notes.md)
 
-The company portal at [www.lingphi.com](https://www.lingphi.com) provides a short product
-entry point and direct per-platform downloads at
+The company portal at [www.lingphi.com](https://www.lingphi.com) provides a short
+product entry point and direct per-platform downloads at
 [www.lingphi.com/manifold/#download](https://www.lingphi.com/manifold/#download).
 This repository is the maintainable documentation set for Manifold: setup
 guides, concepts, API examples, pricing notes, troubleshooting, and user issues.
 
 Security note: Manifold can generate short-lived Local Session Keys for tools
-such as Claude Code. These keys only authenticate to the local Manifold gateway.
+such as Claude Code. These keys authenticate only to the local Manifold gateway.
 Manifold does not sell, lease, or broker third-party model tokens.
 
 ## Support scope
@@ -44,10 +47,12 @@ Use GitHub Issues for:
 - Bugs that can be reproduced with Manifold.
 - Provider setup problems.
 - Missing or unclear documentation.
-- Questions about routes, usage history, local gateway configuration, or plans.
+- Questions about Routes, usage history, local gateway configuration, session
+  keys, releases, or plans.
 
 Please do not paste secrets. Redact local API keys, provider API keys, license
-keys, and private prompts before posting logs or configuration snippets.
+keys, Local Session Keys, private prompts, and raw provider responses before
+posting logs or configuration snippets.
 
 ## Maintainer workflow
 
@@ -85,4 +90,6 @@ Release asset rule: the Lingphi portal links directly to GitHub latest-release
 assets for each supported platform. When publishing a new Manifold release,
 either update the portal asset filenames or upload stable alias filenames such as
 `Manifold-mac-arm64.dmg`, `Manifold-mac-x64.dmg`, `Manifold-win-x64.zip`, and
-`Manifold-win-arm64.zip`.
+`Manifold-win-arm64.zip`. The private Manifold repo also includes a release-sync
+workflow that can mirror public installers into this repository's release with
+the same tag.

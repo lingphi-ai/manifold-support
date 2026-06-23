@@ -1,7 +1,7 @@
 # Plans
 
-Manifold has a Free tier and a Pro tier. Local CLI providers stay available on
-both tiers because the core value is a reliable local gateway.
+Manifold has Free and Pro tiers. The core local gateway and local CLI providers
+remain available on both tiers.
 
 ## Free
 
@@ -12,29 +12,46 @@ Free is intended for individual local workflows and first-time setup.
 - 27 quick-add provider presets, including hosted APIs plus Ollama, LM Studio
   and vLLM local-server presets.
 - OpenAI- and Anthropic-compatible local gateway.
+- Model listing, chat completions, Messages requests, embeddings when supported,
+  and provider-native passthrough.
 - 7-day usage window.
 - Local-only gateway bound to `127.0.0.1`.
-- Manual Local Session Keys for safer project-level development.
+
+Remote provider limits apply to hosted API presets and local-server presets
+because both are configured as HTTP providers. The limit does not apply to local
+CLI providers such as Claude, Codex, or Gemini.
 
 ## Pro
 
-Pro is priced at **$2/year** and is intended for users who depend on multiple
-providers and stable routing.
+Pro is priced at **$2/year** (annual, auto-renewing) and is intended for users
+who depend on multiple providers, stable model names, routing policy, and safer
+project credentials.
 
 - Up to 10 remote or local-server providers.
-- Routes with weighted targets.
+- Routes with failover and weighted distribution.
 - Fallback across compatible providers.
 - Model aliases.
 - Full usage history.
+- Local Session Keys with TTL, optional project, route/provider allow-lists,
+  request counts, bulk revoke, and audit log.
+- Device management for active license seats.
 - Priority support through GitHub Issues.
-- Advanced session policy, usage attribution, and bulk revoke are planned for
-  heavier workflows.
 
-Subscription handling is connected to Manifold licenses and will be enabled with
-public desktop downloads. Pricing and limits should be treated as product
-documentation; if the app behavior differs, open an issue with the version and a
-short reproduction.
+Routes and fallback are enforced at request time. If Pro lapses, stored Routes
+and Pro-only session key behavior do not continue as free runtime features.
 
-The remote provider limit applies to hosted API presets and local-server presets
-because both are configured as HTTP providers. It does not limit local CLI
-providers such as Claude, Codex, or Gemini.
+## How to purchase
+
+- Direct download and the Microsoft Store edition use **Stripe** for checkout.
+- The Mac App Store edition uses **in-app purchase** (StoreKit), with Subscribe
+  and Restore in the purchase flow.
+
+## Billing boundary
+
+Manifold pricing covers Manifold features only. Upstream model usage remains
+between the user and each provider. Manifold does not resell provider tokens,
+does not include third-party model credits, and does not change provider terms or
+billing.
+
+If the app behavior differs from this page, open an issue with the Manifold
+version, operating system, license status, and a short reproduction.

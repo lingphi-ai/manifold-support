@@ -1,37 +1,73 @@
 # 安全
 
-Manifold 的定位是本地访问层，不是 token 市场。它帮助开发者避免把真实服务商
-凭证写进项目目录、shell history、CI 日志和公开 issue。
+Manifold 是本地访问层，不是 token 市场。它帮助开发者在使用真实上游服务商验证
+真实业务逻辑时，避免把真实服务商凭证写进项目目录、shell history、CI 日志和
+公开 issue。
+
+## 本地网关边界
+
+网关只绑定 `127.0.0.1`。Manifold 会强制 loopback host 配置，不用于暴露局域网
+或公网入口。每个请求都需要 Manifold 网关 key（`ldd_…`，32 字节随机）或有效的
+本地会话密钥。
+
+设置窗口运行在严格的 Content-Security-Policy 下。服务商 CLI 以 `shell: false`
+启动，带 120 秒超时和 10 MB 输出上限，并在请求取消时中止。应用日志会隐藏敏感
+值——包括 `apikey`、`authorization`、`prompt`、`messages`、`response`、
+`stdout`、`stderr`，以及任意 `mf_session_`、`ldd_`、`sk-` 或 `AIza` token。
+
+## 服务商凭证
+
+服务商凭证保留在用户自己的机器上。`config.json` 和 secret store 都以 `0600`
+权限写入。远程 API key 存在 Manifold 的本地 secret store 中。当 Electron
+safeStorage 和操作系统 keyring 可用时（例如 macOS Keychain），值会加密后存储。
+如果系统级加密不可用，Manifold 会回落到 `0600` 权限的本地明文文件，并写入
+警告日志。
+
+服务商 key 不会通过 Manifold API 返回给客户端。客户端只拿到 Manifold 网关
+凭证。
+
+## URL 安全
+
+托管远程服务商 URL 必须是安全 HTTPS URL。Manifold 会阻止 loopback、private、
+link-local、metadata、wildcard-DNS 和嵌入 IP 的 host 模式，避免恶意自定义服务商
+通过 SSRF 式配置拿到真实 provider key。
+
+Ollama、LM Studio、vLLM 是明确的本地服务器预设。它们允许 localhost HTTP，
+因为设计目标就是在同一台机器上运行，并且可以免上游 key。
+
+服务商原生透传也受到限制：不跟随 redirect，并且路径必须留在配置的服务商
+origin 内。对于远程服务商，原生转发**只允许 GET 和 POST**——安全 allow-list
+会拒绝任何其他 HTTP 方法，尽管底层的 `ALL /v1/native/:provider/*` 路由在路由
+层面会接受任意方法。
 
 ## 本地会话密钥
 
-本地会话密钥是 Manifold 在本机生成的短期凭证，供本机工具使用。它适合
-Claude Code、测试脚本、项目脚本和其它需要调用 Manifold localhost 网关的
-客户端，用来在开发工程中验证正式业务逻辑，同时避免真实 API key 泄漏。
+本地会话密钥是 Manifold 为本机工具生成的短期凭证，适合 Claude Code、测试脚本
+和项目脚本。它以 `mf_session_` 开头，只显示一次，并可以撤销。系统只存储密钥的
+SHA-256 hash，绝不保存原始值；校验采用时间恒定（timing-safe）且 fail-closed。
 
-当前生成器只要求标签和有效期。它不再显示 Project 字段，因为项目策略和
-allow-list 尚未在已发布 UI 中暴露。除非你安装的 Manifold 版本明确显示这些
-控制项，否则请把项目策略相关说明视为后续策略能力。
+从 CLI 签发密钥使用「Pair a CLI」流程，需要明确的、由人手动触发的配对步骤，
+因此密钥不会被静默签发。
 
-本地会话密钥可以这样使用：
+在 Pro 中，本地会话密钥可以包含：
+
+- 标签；
+- TTL；
+- 可选项目名；
+- 允许的 route 名称；
+- 允许的 provider id；
+- 请求次数和最近使用时间；
+- 创建、撤销、批量撤销和清理的审计事件。
+
+示例：
 
 ```bash
 export ANTHROPIC_BASE_URL=http://127.0.0.1:17680
-export ANTHROPIC_AUTH_TOKEN=mf_session_<short-lived-key>
+export ANTHROPIC_API_KEY=mf_session_<short-lived-key>
 ```
 
 这个 key 只把客户端认证到 `127.0.0.1` 上的 Manifold。它不会暴露真实的
 Anthropic、OpenAI、DeepSeek、OpenRouter 或其它服务商 API key。
-
-## 它是什么
-
-- Manifold 本地网关凭证。
-- 短期有效，可以撤销。
-- 在 Manifold 中以 hash 存储，生成时只显示一次。
-- 适合按项目或按开发任务生成。
-- 用来让服务商凭证不进入源码和项目本地 env 文件。
-- 当 Claude Code 等工具需要 Anthropic 风格兼容端点时，可以使用它替代真实
-  服务商 key。
 
 ## 它不是什么
 
@@ -39,25 +75,27 @@ Anthropic、OpenAI、DeepSeek、OpenRouter 或其它服务商 API key。
 - 它不是模型额度或预付费使用量。
 - 它不会绕过服务商账号、服务商计费或服务商条款。
 - Manifold 不销售、租借或中转第三方模型 token。
-- 除非用户主动暴露本地 host，否则它不能让其它机器调用你的网关；Manifold 的
-  设计目标就是只绑定本机。
+- 除非用户在 Manifold 外部主动破坏本地边界，否则它不能让其它机器调用你的
+  网关。
 
 ## 推荐工作流
 
 1. 在 Manifold 中添加服务商，把真实凭证保留在 Manifold 本地存储里。
 2. 为每个项目或开发任务创建一个本地会话密钥。
 3. 设置较短 TTL，例如 1 小时、1 天或 7 天。
-4. 把 `mf_session_<short-lived-key>` 填入需要访问网关的本地工具。
-5. 任务结束、共享项目之前，或密钥可能进入日志时，立即撤销该密钥。
+4. 如果工具只需要特定访问范围，设置 route/provider allow-list。
+5. 把 `mf_session_<short-lived-key>` 填入需要访问网关的本地工具。
+6. 任务结束、共享项目之前，或密钥可能进入日志时，立即撤销该密钥。
 
-## 安全边界
+## 许可证和账单安全
 
-服务商凭证留在用户自己的机器上。项目工具只拿到访问 Manifold localhost 网关
-的受限凭证。Manifold 再由本地桌面应用把请求路由到用户已配置的服务商。这是
-凭证隔离和本地访问控制，不是 token 转售。
+Pro 由短期签名 entitlement token 解锁，token 绑定 Manifold 产品和设备。打包
+版本始终强制许可证校验；开发覆盖环境变量在打包版本中会被忽略。
 
-对于 Ollama、LM Studio、vLLM 这类本地服务器预设，上游本身可能不需要 API
-key。这不会改变客户端边界：客户端仍然认证到 Manifold，Manifold 仍然只绑定
-`127.0.0.1`。
+应用打开的账单和许可证链接只允许指向 Lingphi、Stripe 等 allow-list 中的 HTTPS
+host。
 
-提交 issue 时，请同时隐藏服务商 key 和本地会话密钥。
+## 提交 issue 前
+
+请隐藏服务商 key、Manifold 网关 key、本地会话密钥、许可证 key、私有 prompt、
+原始请求体和原始服务商响应，除非维护者明确要求你提供脱敏样例。
