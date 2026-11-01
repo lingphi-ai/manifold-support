@@ -7,6 +7,37 @@ https://github.com/lingphi-ai/manifold-support/releases/latest
 
 私有 Manifold 源码仓库保持内部使用，不作为公开下载入口。
 
+## 0.7.0 候选版 — 尚未公开发布
+
+核对日期：2026-11-01。源码／包版本：**0.7.0**。TestFlight 构建
+**0.7.0 (0.7.0)** 已上传并处理，状态为 **Missing Compliance**；尚未完成
+可用的私有安装及真实内购验收。
+
+当日 GitHub 最新公开版为 **v0.6.0**。公开下载入口跟随 GitHub Releases，
+不指向私有 TestFlight 构建。Windows 0.7.0 新构建、注册商店包、WACK 与
+原生 ARM64 验收仍待完成；不表示 0.7.0 已公开上架。
+
+当前实现已移除本地可执行程序集成及 Claude/Gemini 订阅 OAuth，保留普通 API
+密钥与本地 HTTP 模型服务器接入。Codex OAuth 实现保留，OpenAI 分发授权待取得。
+
+### 上架待办
+
+- 完成 Apple 加密合规及法国材料；保留法国市场，尚无批准或豁免结论。
+- 在实际生产 Gateway 配置收据共享密钥；旧 License Worker 的配置不会继承。
+  准备独立 Sandbox 验证，不在生产环境接受 Sandbox 收据。
+- 用商店构建验证真实购买 → 服务端验证 → Pro、重启、恢复、续费和退款。
+- 核对／替换当前内购截图，关联年度订阅与构建；年度内购仍为
+  Prepare for Submission。
+- 用户 ID、设备 ID、购买记录的隐私标签已发布：应用功能、关联身份、不追踪；
+  中英文官网隐私说明已发布。这不代表其他上架门槛已经通过。
+
+官网／Microsoft Store 的 Pro 为 $2.99 一次购买、有效 365 天、不自动续费。
+MAS 为年度自动续订，以 StoreKit 显示的当地价格为准，不套用官网价格。
+
+## 历史版本
+
+以下条目记录当时行为；已经移除的订阅接入仅作为历史记录，不是当前配置说明。
+
 ## v0.1.12 App Store 版本
 
 日期：2026-06-23
@@ -23,11 +54,11 @@ https://github.com/lingphi-ai/manifold-support/releases/latest
   设置。
 - 网关启动、停止、重启，或从托盘打开设置时，窗口不再闪烁。
 
-## v0.1.10 Pair a CLI 改进
+## v0.1.10 Pair a local tool 改进
 
 日期：2026-06-22
 
-- "Pair a CLI" 现在会显示一条可直接粘贴的 `curl` 铸造命令。
+- "Pair a local tool" 现在会显示一条可直接粘贴的 `curl` 铸造命令。
 - 修复了配对界面中的占位符插值，示例值现在正确渲染。
 - 网关启动和重启就地更新，窗口不再闪烁。
 
@@ -36,7 +67,7 @@ https://github.com/lingphi-ai/manifold-support/releases/latest
 日期：2026-06-21
 
 - 新增 `/llm.txt` 发现端点，让 agent 和工具能了解网关的能力。
-- 新增 `POST /v1/session-keys` 铸造端点，以及 "Pair a CLI"：一个免 key、由人工
+- 新增 `POST /v1/session-keys` 铸造端点，以及 "Pair a local tool"：一个免 key、由人工
   确认的配对流程，用于连接编码工具。
 - 新增 Help 面板，内置开发者手册。
 - Connect 现在列出这些新端点。
@@ -50,9 +81,7 @@ https://github.com/lingphi-ai/manifold-support/releases/latest
 
 - Mac App Store 版本：仅远程、沙箱化，使用 StoreKit 应用内购买实现 Subscribe 和
   Restore。
-- 通过 OAuth 的 CLI 订阅服务商（Claude、Codex、Gemini），每行带 CLI ⇄ OAuth
-  传输方式切换。
-- 通过 prompt 模拟实现 CLI 工具调用。
+- 引入 Claude、Codex、Gemini 浏览器授权订阅账户。
 - 远程服务商支持 function calling / `tool_use`。
 - 可直接从设置添加 OAuth 服务商。
 
@@ -114,7 +143,7 @@ https://github.com/lingphi-ai/manifold-support/releases/latest
 用户可见变化：
 
 - 桌面构建目标覆盖 macOS arm64、macOS x64、Windows x64 和 Windows arm64。
-- 添加服务商流程收敛为 **Local CLI**、**Remote** 和 **Custom**。Remote 服务商
+- 添加服务商流程使用类型选择器和自定义配置。远程服务商
   从下拉框选择，不再使用过宽的多标签布局。
 - Manifold 内置 27 个 quick-add 服务商预设。目录包括 OpenAI、Anthropic、
   Gemini API、DeepSeek、GLM、OpenRouter、Qwen、Moonshot/Kimi、Perplexity、

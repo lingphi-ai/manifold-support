@@ -8,6 +8,45 @@ https://github.com/lingphi-ai/manifold-support/releases/latest
 The private Manifold source repository remains internal and is not the public
 download destination.
 
+## 0.7.0 candidate — not publicly released
+
+Status checked: 2026-11-01. Source/package version: **0.7.0**. TestFlight:
+**0.7.0 (0.7.0), Missing Compliance**. Upload and processing are complete;
+installation and payment acceptance are not.
+
+The latest public GitHub release is **v0.6.0** on this date. Public download
+links follow GitHub Releases, not the private TestFlight build. Windows 0.7.0
+rebuild, registered Store package checks, WACK and native ARM64 acceptance remain
+open. No 0.7.0 public store availability is claimed.
+
+Current implementation removes local executable integration and Claude/Gemini
+subscription OAuth; ordinary API-key and local HTTP model-server access remain.
+Codex OAuth remains implemented, pending OpenAI distribution approval.
+
+### Store release gates
+
+- Resolve Apple encryption compliance and France documentation; France remains
+  in scope and no approval or exemption is claimed.
+- Configure the receipt shared secret on the actual production Gateway (the
+  legacy License Worker configuration is not inherited), and prepare isolated
+  Sandbox verification without enabling Sandbox receipts in production.
+- Complete native purchase → server validation → Pro, restart, restore, renewal
+  and refund acceptance using the store build.
+- Replace/verify the current IAP screenshot, attach the annual subscription and
+  build to the app submission. The annual IAP remains Prepare for Submission.
+- Privacy labels for User ID, Device ID and Purchase History were published for
+  App Functionality, linked to identity, with no tracking. The bilingual public
+  privacy notice was published. This does not close the other store gates.
+
+Web/Microsoft Store Pro is a $2.99 one-time purchase valid for 365 days, without
+automatic renewal. The MAS edition uses an annual auto-renewing subscription;
+use its displayed localized StoreKit price, not the web price.
+
+## Historical releases
+
+The entries below record earlier behavior. Removed subscription integrations
+are historical and are not current setup instructions.
+
 ## v0.1.12 App Store edition
 
 Date: 2026-06-23
@@ -26,11 +65,11 @@ Date: 2026-06-23
 - No window flash when the gateway starts, stops, or restarts, or when opening
   Settings from the tray.
 
-## v0.1.10 pair a CLI improvements
+## v0.1.10 local tool pairing improvements
 
 Date: 2026-06-22
 
-- "Pair a CLI" now shows a ready-to-paste `curl` mint command.
+- "Pair a local tool" now shows a ready-to-paste `curl` mint command.
 - Fixed placeholder interpolation in the pairing UI so the example values render
   correctly.
 - Gateway start and restart update in place with no window flash.
@@ -41,7 +80,7 @@ Date: 2026-06-21
 
 - New `/llm.txt` discovery endpoint so agents and tools can learn the gateway's
   capabilities.
-- New `POST /v1/session-keys` mint endpoint plus "Pair a CLI": a keyless,
+- New `POST /v1/session-keys` mint endpoint plus "Pair a local tool": a keyless,
   human-armed pairing flow for connecting coding tools.
 - New Help panel with an in-app developer manual.
 - Connect now lists the new endpoints.
@@ -56,9 +95,7 @@ Date: 2026-06-15
 
 - Mac App Store edition: remote-only and sandboxed, with StoreKit in-app purchase
   for Subscribe and Restore.
-- CLI subscription providers via OAuth (Claude, Codex, Gemini), with a per-row
-  CLI ⇄ OAuth transport toggle.
-- CLI tool-calling via prompt emulation.
+- Browser-connected subscription accounts were introduced for Claude, Codex, and Gemini.
 - Function calling / `tool_use` support for remote providers.
 - OAuth providers can be added directly from Settings.
 
@@ -127,8 +164,7 @@ User-visible changes:
 
 - Desktop build targets now cover macOS arm64, macOS x64, Windows x64, and
   Windows arm64.
-- The Add provider flow is collapsed into **Local CLI**, **Remote**, and
-  **Custom**. Remote providers are selected from a dropdown instead of a wide
+- The Add provider flow uses a type selector with preset and custom configuration. Remote providers are selected from a dropdown instead of a wide
   multi-tab layout.
 - Manifold ships 27 quick-add provider presets. The catalog includes hosted API
   providers such as OpenAI, Anthropic, Gemini API, DeepSeek, GLM, OpenRouter,

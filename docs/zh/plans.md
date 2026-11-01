@@ -1,54 +1,37 @@
 # 版本与计划
 
-Manifold 提供 Free 和 Pro 两个版本。核心本地网关和本地 CLI 服务商在两个版本中
-都可用。
+Free 和 Pro 都提供本地 HTTP 网关、浏览器授权账户、模型列表、聊天请求、
+Anthropic Messages、供应商支持时的 embeddings，以及 provider-native passthrough。
+Manifold 包含 Ollama、LM Studio、vLLM 等 27 个预设。
 
 ## Free
 
-Free 适合个人本地工作流和首次配置。
-
-- 不限数量的本地 CLI 服务商。
-- 1 个远程或本地服务器服务商。
-- 27 个 quick-add 服务商预设，包括托管 API 以及 Ollama、LM Studio、vLLM
-  本地服务器预设。
-- 兼容 OpenAI 和 Anthropic 的本地网关。
-- 模型列表、chat completions、Messages 请求、服务商支持时的 embeddings，以及
-  provider-native passthrough。
-- 7 天用量窗口。
-- 只绑定 `127.0.0.1` 的本地网关。
-
-远程服务商限制适用于托管 API 预设和本地服务器预设，因为二者都作为 HTTP
-服务商配置；它不限制 Claude、Codex、Gemini 这类本地 CLI 服务商。
+- 3 个远程或本地服务器服务商。
+- 浏览器授权的 Codex 订阅账户。
+- 1 条路由，可配置 weighted 或 failover 排序。
+- 3 个有效本地会话密钥，支持过期和撤销。
+- 7 天网关用量历史。
+- 内置对话和只读工作区 agent 工具。
 
 ## Pro
 
-Pro 价格为 **$2/year**（按年订阅，自动续费），适合依赖多个服务商、稳定模型名、
-路由策略和更安全项目凭证的用户。
-
 - 最多 10 个远程或本地服务器服务商。
-- 支持 failover 和 weighted 分发的 Routes。
-- 兼容服务商之间的 fallback。
-- 模型别名。
-- 完整用量历史。
-- 本地会话密钥：TTL、可选项目、route/provider allow-list、请求次数、批量撤销
-  和审计日志。
-- 已激活许可证设备管理。
-- 通过 GitHub Issues 获得优先支持。
+- 不限数量的路由和有效本地会话密钥。
+- Chat/Messages 可重试错误后的跨供应商回退，以及模型别名。
+- 密钥策略、项目标签、route/provider 范围、工具配对、批量撤销、请求归因与审计。
+- 30 天网关历史，以及 agent 写入和编辑工具。
+- 许可证恢复和设备管理。
 
-Routes 和 fallback 会在请求路径上检查权限。如果 Pro 失效，已保存的 Routes 和
-Pro-only 会话密钥行为不会继续作为免费运行时能力存在。
+托管 API 与本地服务器均占远程供应商限额，浏览器 OAuth 账户不占此限额。
+这些是应用自身的权限；上游账户权益和模型使用费用仍由供应商管理。
 
-## 如何购买
+## 购买渠道
 
-- 直接下载版本和 Microsoft Store 版本通过 **Stripe** 结算。
-- Mac App Store 版本使用**应用内购买**（StoreKit），购买流程中提供 Subscribe 和
-  Restore。
+直接下载和 Microsoft Store 版本当前提供一次性 $2.99 购买，有效期 365 天，
+不会自动续费。Mac App Store 版本使用 StoreKit 年度订阅，购买前请查看商店显示
+的价格与条款。关于页按安装渠道提供购买与恢复入口。
 
-## 账单边界
+Manifold 不销售、租借或中转供应商 token，不包含模型额度，也不能替代上游账户。
+如果实际应用与文档不同，请附上版本、渠道、许可证状态和脱敏复现步骤反馈。
 
-Manifold 价格只覆盖 Manifold 自身能力。上游模型使用量仍由用户和对应服务商
-结算。Manifold 不转售 provider token，不包含第三方模型额度，也不会改变服务商
-条款或账单。
-
-如果应用行为与本页不同，请提交 issue，并附上 Manifold 版本、操作系统、许可证
-状态和简短复现步骤。
+当前 0.7.0 商店候选版的真实 StoreKit 购买／恢复验收仍待完成，见[发布说明](release-notes.md)。

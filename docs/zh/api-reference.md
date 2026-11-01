@@ -10,8 +10,8 @@ http://127.0.0.1:17680/v1
 
 ## 认证
 
-除 `GET /llm.txt`（以及 `/llms.txt`）和健康检查端点不需要认证外，每个请求都需要
-`Authorization: Bearer <apiKey>`。
+仅 `GET /llm.txt` 和 `GET /llms.txt` 公开。健康检查、模型列表和推理请求都需要
+通过 Bearer 或 x-api-key 提供主密钥或有效会话密钥。
 
 OpenAI 风格客户端应发送：
 
@@ -41,8 +41,8 @@ Authorization: Bearer mf_session_<short-lived-key>
 | POST | `/v1/claude/messages` | Messages 的 Claude 兼容别名。 |
 | POST | `/v1/:provider/messages` | 指定某个服务商处理 Messages 请求。 |
 | POST | `/v1/embeddings` | 服务商支持时发送 OpenAI 兼容 embeddings 请求。 |
-| ALL | `/v1/native/:provider/*` | 对服务商原生 API 的底层透传。 |
-| POST | `/v1/session-keys` | 签发短期、限定范围的本地会话密钥（Pro）。 |
+| GET/POST | `/v1/native/:provider/*` | 对服务商原生 API 的底层透传。 |
+| POST | `/v1/session-keys` | 在当前版本额度内签发本地会话密钥。 |
 | GET | `/llm.txt`（以及 `/llms.txt`） | 实时生成的 Markdown 发现文档，无需认证。 |
 
 ## 模型路由
@@ -51,7 +51,7 @@ Authorization: Bearer mf_session_<short-lived-key>
 
 - `provider/model` 强制使用某个已配置服务商，并把 `model` 发给上游。
 - 普通模型名会按优先级在兼容服务商之间选择。
-- Pro Route id 会分发到该 route 的目标。
+- 配置的 Route id 会分发到该 route 的目标。
 - Pro 生效时，模型别名可以在路由前把一个客户端名称改写到另一个目标。
 
 Routes 会先于普通模型路由匹配。route id 不保证出现在 `/v1/models` 中，客户端
@@ -128,8 +128,9 @@ Manifold 会按路由顺序尝试兼容服务商。如果没有服务商支持�
 
 ## 会话密钥
 
-`POST /v1/session-keys` 签发一个短期、限定范围的本地会话密钥（Pro）。可以用
-主网关 key 认证，也可以用「Pair a CLI」窗口签发的 `pairing_code` 认证。请求体
+`POST /v1/session-keys` 签发本地会话密钥：Free 允许 3 个有效密钥，Pro 增加
+不限数量、范围策略与工具配对。可以用
+主网关 key 认证，也可以用「Pair a local tool」窗口签发的 `pairing_code` 认证。请求体
 接受 `label`、`ttl`（`1h`、`1d`、`7d`、`30d` 或 `never`）、`allowedRoutes`、
 `allowedProviders` 和 `pairing_code`：
 
@@ -155,7 +156,7 @@ curl http://127.0.0.1:17680/v1/session-keys \
 
 `GET /llm.txt`（以及 `/llms.txt`）返回一个根据你的配置和服务商注册表实时生成的
 Markdown 发现文档——base URL、已启用服务商、可调用模型和端点。它无需认证，
-便于编码 agent 和 CLI 直接获取。
+便于 agent 和工具直接获取。
 
 ## 错误
 

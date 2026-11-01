@@ -11,8 +11,8 @@ traffic.
 
 ## Authentication
 
-Every route requires `Authorization: Bearer <apiKey>` except `GET /llm.txt`
-(and `/llms.txt`) and the health probes, which are unauthenticated.
+Only `GET /llm.txt` and `GET /llms.txt` are public. Health probes, model listing,
+and inference require a master or active session key via Bearer or x-api-key.
 
 OpenAI-style clients should send:
 
@@ -43,8 +43,8 @@ key header.
 | POST | `/v1/claude/messages` | Claude-compatible alias for Messages. |
 | POST | `/v1/:provider/messages` | Force one provider for Messages. |
 | POST | `/v1/embeddings` | OpenAI-compatible embeddings when the provider supports them. |
-| ALL | `/v1/native/:provider/*` | Low-level passthrough to the provider's native API. |
-| POST | `/v1/session-keys` | Mint a short-lived scoped Local Session Key (Pro). |
+| GET/POST | `/v1/native/:provider/*` | Low-level passthrough to the provider's native API. |
+| POST | `/v1/session-keys` | Mint a gateway session key within the active-key tier limit. |
 | GET | `/llm.txt` (and `/llms.txt`) | Live Markdown discovery doc. No authentication required. |
 
 ## Model routing
@@ -53,7 +53,7 @@ The `model` field controls routing:
 
 - `provider/model` forces a configured provider and sends `model` upstream.
 - a bare model id routes across compatible providers in priority order;
-- a Pro Route id fans out to its route targets;
+- a configured Route id fans out to its route targets;
 - a model alias can rewrite a client-facing name before routing when Pro is
   active.
 
@@ -136,9 +136,10 @@ route names.
 
 ## Session keys
 
-`POST /v1/session-keys` mints a short-lived, scoped Local Session Key (Pro).
+`POST /v1/session-keys` mints a Local Session Key: Free allows three active keys;
+Pro adds unlimited keys, scopes, and local tool pairing.
 It can be authenticated with the master gateway key, or with a `pairing_code`
-issued by a "Pair a CLI" window. The request body accepts `label`,
+issued by a "Pair a local tool" window. The request body accepts `label`,
 `ttl` (`1h`, `1d`, `7d`, `30d`, or `never`), `allowedRoutes`,
 `allowedProviders`, and `pairing_code`:
 
@@ -165,7 +166,7 @@ The response returns the new key once:
 `GET /llm.txt` (and `/llms.txt`) returns a Markdown discovery document
 generated live from your config and provider registry — base URL, enabled
 providers, callable models, and endpoints. It requires no authentication so
-coding agents and CLIs can fetch it directly.
+agents and tools can fetch it directly.
 
 ## Errors
 

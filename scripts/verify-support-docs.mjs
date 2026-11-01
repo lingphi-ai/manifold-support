@@ -51,21 +51,21 @@ const requiredBuiltFiles = [
 ];
 
 const mustMention = {
-  "README.md": ["Manifold", "docs/en", "docs/zh", "Issues", "127.0.0.1:17680", "npm run build", "v0.1.12", "Ollama", "LM Studio", "vLLM", "https://github.com/lingphi-ai/manifold-support/releases/latest", "https://www.lingphi.com/manifold/#download", "Release asset rule", "release-sync", "does not sell, lease, or broker"],
-  "docs/en/index.md": ["Manifold", "Quick start", "Support", "v0.1.12", "27 quick-add", "macOS arm64", "Windows arm64", "Ollama", "LM Studio", "vLLM", "every 12 hours", "does not sell, lease, or broker", "https://github.com/lingphi-ai/manifold-support/releases/latest", "https://www.lingphi.com/manifold/#download"],
-  "docs/zh/index.md": ["Manifold", "快速开始", "支持", "v0.1.12", "27 个 quick-add", "macOS arm64", "Windows arm64", "Ollama", "LM Studio", "vLLM", "每 12 小时", "不销售", "https://github.com/lingphi-ai/manifold-support/releases/latest", "https://www.lingphi.com/manifold/#download"],
-  "docs/en/quick-start.md": ["v0.1.12", "macOS Apple Silicon", "Windows x64", "Local CLI", "Remote", "Custom", "Ollama", "LM Studio", "vLLM", "Refresh models", "mf_session_", "https://github.com/lingphi-ai/manifold-support/releases/latest", "https://www.lingphi.com/manifold/#download"],
-  "docs/zh/quick-start.md": ["v0.1.12", "macOS Apple Silicon", "Windows x64", "Local CLI", "Remote", "Custom", "Ollama", "LM Studio", "vLLM", "Refresh models", "mf_session_", "https://github.com/lingphi-ai/manifold-support/releases/latest", "https://www.lingphi.com/manifold/#download"],
+  "README.md": ["Manifold", "docs/en", "docs/zh", "Issues", "127.0.0.1:17680", "npm run build", "v0.7.0", "Ollama", "LM Studio", "vLLM", "https://github.com/lingphi-ai/manifold-support/releases/latest", "https://www.lingphi.com/manifold/#downloads", "Release asset rule", "release-sync", "does not sell, lease, or broker"],
+  "docs/en/index.md": ["Manifold", "Quick start", "Support", "v0.7.0", "27 quick-add", "macOS arm64", "Windows arm64", "Ollama", "LM Studio", "vLLM", "every 12 hours", "does not sell, lease, or broker"],
+  "docs/zh/index.md": ["Manifold", "快速开始", "支持", "v0.7.0", "27 个 quick-add", "macOS arm64", "Windows arm64", "Ollama", "LM Studio", "vLLM", "每 12 小时", "不销售"],
+  "docs/en/quick-start.md": ["v0.7.0", "macOS Apple Silicon", "Windows x64", "Subscription", "Remote", "Custom", "Ollama", "LM Studio", "vLLM", "Refresh models", "mf_session_"],
+  "docs/zh/quick-start.md": ["v0.7.0", "macOS Apple Silicon", "Windows x64", "Subscription", "Remote", "Custom", "Ollama", "LM Studio", "vLLM", "Refresh models", "mf_session_"],
   "docs/en/concepts.md": ["127.0.0.1", "provider/model", "Routes", "failover", "weighted", "every 12 hours", "mf_session_"],
   "docs/zh/concepts.md": ["127.0.0.1", "provider/model", "Routes", "failover", "weighted", "每 12 小时", "mf_session_"],
-  "docs/en/configuration.md": ["27 quick-add", "Ollama", "LM Studio", "vLLM", "remote or local-server provider", "Refresh models", "every 12 hours", "Claude Code", "mf_session_"],
-  "docs/zh/configuration.md": ["27 个 quick-add", "Ollama", "LM Studio", "vLLM", "远程或本地服务器服务商", "Refresh models", "每 12 小时", "Claude Code", "mf_session_"],
-  "docs/en/plans.md": ["Free", "Pro", "$2/year", "1 remote or local-server provider", "10 remote or local-server providers", "Local Session Keys", "embeddings", "provider-native passthrough"],
-  "docs/zh/plans.md": ["Free", "Pro", "$2/year", "1 个远程或本地服务器服务商", "10 个远程或本地服务器服务商", "本地会话密钥", "embeddings", "provider-native passthrough"],
+  "docs/en/configuration.md": ["27 quick-add", "Ollama", "LM Studio", "vLLM", "remote or local-server provider", "Refresh models", "every 12 hours", "browser OAuth", "mf_session_", "app.log", "gateway.log"],
+  "docs/zh/configuration.md": ["27 个 quick-add", "Ollama", "LM Studio", "vLLM", "远程或本地服务器服务商", "Refresh models", "每 12 小时", "浏览器", "mf_session_", "app.log", "gateway.log"],
+  "docs/en/plans.md": ["Free", "Pro", "$2.99", "3 remote or local-server providers", "10 remote or local-server providers", "Local Session Keys", "embeddings", "provider-native passthrough"],
+  "docs/zh/plans.md": ["Free", "Pro", "$2.99", "3 个远程或本地服务器服务商", "10 个远程或本地服务器服务商", "本地会话密钥", "embeddings", "provider-native passthrough"],
   "docs/en/api-reference.md": ["/health/live", "/health/ready", "/v1/models", "/v1/chat/completions", "/v1/messages", "/v1/embeddings", "/v1/native/:provider/*", "stream"],
   "docs/zh/api-reference.md": ["/health/live", "/health/ready", "/v1/models", "/v1/chat/completions", "/v1/messages", "/v1/embeddings", "/v1/native/:provider/*", "stream"],
-  "docs/en/security.md": ["Local Session Keys", "Claude Code", "mf_session_", "does not sell, lease, or broker", "safeStorage", "allowed route names", "token marketplace"],
-  "docs/zh/security.md": ["本地会话密钥", "Claude Code", "mf_session_", "不销售、租借或中转", "safeStorage", "允许的 route 名称", "token 市场"],
+  "docs/en/security.md": ["Local Session Keys", "mf_session_", "does not sell, lease, or broker", "safeStorage", "allowed route names", "token marketplace"],
+  "docs/zh/security.md": ["本地会话密钥", "mf_session_", "不销售、租借或中转", "safeStorage", "允许的 route 名称", "token 市场"],
   "docs/en/troubleshooting.md": ["Refresh models", "every 12 hours", "native passthrough", "release-sync", "Routes"],
   "docs/zh/troubleshooting.md": ["Refresh models", "每 12 小时", "native passthrough", "release-sync", "Routes"],
   "docs/en/release-notes.md": ["v0.1.12", "v0.1.2", "v0.1.1", "Manifold-0.1.2-mac-arm64.dmg", "Manifold-0.1.2-win-x64.zip", "27 quick-add", "Ollama", "LM Studio", "vLLM", "macOS arm64", "Windows arm64", "every 12 hours", "release-sync", "https://github.com/lingphi-ai/manifold-support/releases/latest", "https://github.com/lingphi-ai/manifold-support/releases/tag/v0.1.2"],
@@ -106,11 +106,19 @@ for (const file of requiredBuiltFiles) {
 
 for (const [file, terms] of Object.entries(mustMention)) {
   if (!existsSync(join(root, file))) continue;
-  const text = read(file);
+  const text = read(file).replace(/\s+/g, " ");
   for (const term of terms) {
     if (!text.includes(term)) {
       fail(`${file} missing ${term}`);
     }
+  }
+}
+
+// Public guides must not reintroduce retired executable or external-log setup.
+const retiredSetup = /local\s+CLI|本地\s*CLI|CLI\s*⇄\s*OAuth|CLI tool.calling|CLI 工具调用|CLI subscription providers|CLI 订阅|Pair a CLI|CLI logs|ccusage|auto-detect the binary|shell:\s*false/i;
+for (const file of requiredFiles.filter((file) => file.endsWith(".md"))) {
+  if (existsSync(join(root, file)) && retiredSetup.test(read(file))) {
+    fail(`${file} contains retired local executable setup or usage-import instructions`);
   }
 }
 

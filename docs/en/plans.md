@@ -1,57 +1,43 @@
 # Plans
 
-Manifold has Free and Pro tiers. The core local gateway and local CLI providers
-remain available on both tiers.
+Free and Pro share the local HTTP gateway, browser OAuth accounts, model listing,
+chat completions, Anthropic Messages, embeddings when supported, and
+provider-native passthrough. Manifold includes 27 provider presets including
+Ollama, LM Studio, and vLLM.
 
 ## Free
 
-Free is intended for individual local workflows and first-time setup.
-
-- Unlimited local CLI providers.
-- 1 remote or local-server provider.
-- 27 quick-add provider presets, including hosted APIs plus Ollama, LM Studio
-  and vLLM local-server presets.
-- OpenAI- and Anthropic-compatible local gateway.
-- Model listing, chat completions, Messages requests, embeddings when supported,
-  and provider-native passthrough.
-- 7-day usage window.
-- Local-only gateway bound to `127.0.0.1`.
-
-Remote provider limits apply to hosted API presets and local-server presets
-because both are configured as HTTP providers. The limit does not apply to local
-CLI providers such as Claude, Codex, or Gemini.
+- 3 remote or local-server providers.
+- Browser-connected Codex subscription accounts.
+- 1 Route with weighted or failover target ordering.
+- 3 active Local Session Keys with expiry and revocation.
+- 7-day gateway usage history.
+- Built-in Chat and read-only workspace agent tools.
 
 ## Pro
 
-Pro is priced at **$2/year** (annual, auto-renewing) and is intended for users
-who depend on multiple providers, stable model names, routing policy, and safer
-project credentials.
+- 10 remote or local-server providers.
+- Unlimited Routes and active Local Session Keys.
+- Retryable Chat/Messages fallback and model aliases.
+- Session policies, project labels, route/provider scope, pairing, bulk revoke,
+  request attribution, and audit access.
+- 30-day gateway usage history and agent write/edit tools.
+- License restoration and device management.
 
-- Up to 10 remote or local-server providers.
-- Routes with failover and weighted distribution.
-- Fallback across compatible providers.
-- Model aliases.
-- Full usage history.
-- Local Session Keys with TTL, optional project, route/provider allow-lists,
-  request counts, bulk revoke, and audit log.
-- Device management for active license seats.
-- Priority support through GitHub Issues.
+Remote caps include hosted API presets and local-server presets. Browser OAuth
+accounts are outside that cap. Limits are enforced by the application; upstream
+account entitlements and model billing remain provider-specific.
 
-Routes and fallback are enforced at request time. If Pro lapses, stored Routes
-and Pro-only session key behavior do not continue as free runtime features.
+## Purchase channels
 
-## How to purchase
+The direct-download and Microsoft Store app currently offers a $2.99 purchase
+valid for 365 days, without automatic renewal. The Mac App Store app uses
+StoreKit annual subscription billing; review the displayed store price and terms
+before purchasing. About contains the purchase and restore controls for the
+installed edition.
 
-- Direct download and the Microsoft Store edition use **Stripe** for checkout.
-- The Mac App Store edition uses **in-app purchase** (StoreKit), with Subscribe
-  and Restore in the purchase flow.
+Manifold does not sell, lease, or broker provider tokens, bundle model credits,
+or replace an upstream provider account. Report a mismatch with the app version,
+license status, channel, and a redacted reproduction.
 
-## Billing boundary
-
-Manifold pricing covers Manifold features only. Upstream model usage remains
-between the user and each provider. Manifold does not resell provider tokens,
-does not include third-party model credits, and does not change provider terms or
-billing.
-
-If the app behavior differs from this page, open an issue with the Manifold
-version, operating system, license status, and a short reproduction.
+For the current 0.7.0 store candidate, real StoreKit purchase/restore acceptance remains pending. See [release notes](release-notes.md).

@@ -1,94 +1,68 @@
 # Manifold Documentation
 
-Manifold is a local AI model gateway for developer tools. It runs as a desktop
-tray app and exposes a single compatible endpoint at
-`http://127.0.0.1:17680/v1`. Compatible clients can list models, send OpenAI
-Chat Completions, send Anthropic Messages, request embeddings, or forward
-provider-native calls through Manifold.
+Manifold is a desktop app and local HTTP gateway at `http://127.0.0.1:17680/v1`.
+These docs describe the current source implementation, package v0.7.0. Public
+installers may have a different version; check the release page before installing.
 
-These docs reflect Manifold `v0.1.12` product behavior. The latest public
-desktop installer is distributed through the public support release channel and
-the Lingphi portal.
+## Release status — 2026-11-01
+
+- **0.7.0 is not a public release.** The universal macOS App Store build
+  0.7.0 (0.7.0) has been uploaded and processed in TestFlight, but remains
+  **Missing Compliance**. No usable private TestFlight installation or real
+  StoreKit purchase/restore acceptance is claimed.
+- The latest public GitHub release checked on this date is **v0.6.0**, with macOS
+  arm64/x64 DMGs and Windows x64/arm64 ZIPs. The download links below follow the
+  latest public release; they do not provide the private 0.7.0 store build.
+- Windows 0.7.0 has not completed a new build and native Store acceptance. The
+  existing Microsoft Store listing does not establish 0.7.0 availability.
+- Current guides describe the 0.7.0 source. Claude and Gemini subscription OAuth
+  have been removed; their API-key providers remain supported. Codex OAuth
+  remains implemented, with OpenAI distribution approval still pending.
+- See [release notes](release-notes.md) for store gates and historical changes.
 
 ## What Manifold does
 
-- Runs a local gateway bound to `127.0.0.1`, never a public network listener.
-- Connects local CLI providers: Claude, Codex, and Gemini when those CLIs are
-  installed and authenticated on the same machine. Each can be reached either
-  through the local CLI binary ("CLI" transport) or directly via the provider's
-  OAuth-authenticated API ("OAuth" transport) that reuses the user's
-  subscription. A per-row CLI⇄OAuth toggle in **Providers** switches transport
-  live.
-- Connects hosted API providers through 27 quick-add presets including OpenAI,
-  Anthropic, Gemini API, DeepSeek, GLM, Mistral, Groq, xAI, OpenRouter,
-  Together, Qwen, Moonshot/Kimi, Perplexity, Fireworks, Cerebras, Cohere,
-  NVIDIA NIM, SambaNova, MiniMax, Doubao, ERNIE, Hunyuan, StepFun, and
-  SiliconFlow.
-- Connects local-server presets such as Ollama, LM Studio, and vLLM using
-  localhost OpenAI-compatible URLs and optional upstream authentication.
-- Enables or disables a provider instantly with no gateway restart; the UI
-  updates in place.
-- Surfaces endpoints and SDK setup snippets in the **Connect** panel, and ships
-  an in-app developer manual in the **Help** panel.
-- Publishes `/llm.txt`, an auth-exempt discovery doc at the gateway root that
-  coding agents and CLIs can read to learn the available endpoints.
-- Refreshes remote model catalogs when a provider is added, when the user clicks
-  Refresh models, shortly after launch, and then every 12 hours.
-- Supports Pro Routes: stable client-facing model names with failover or
-  weighted distribution across provider/model targets.
-- Supports Local Session Keys for project tools (Pro), with TTL, optional
-  project names, route/provider allow-lists, request counts, bulk revoke, and
-  audit logging. `POST /v1/session-keys` mints short-lived scoped keys, and a
-  CLI can self-mint one via **Pair a CLI** (Gateway → Session keys) without the
-  master key.
-- Keeps upstream provider billing and credentials between the user and each
-  provider. Manifold does not sell, lease, or broker third-party model tokens.
+- Connects hosted HTTP APIs and local servers using 27 quick-add presets,
+  including Ollama, LM Studio, and vLLM.
+- Connects Codex subscription accounts through browser OAuth.
+  Authorization and refresh use Manifold's own account store.
+- Exposes OpenAI Chat Completions, Anthropic Messages, model listing, embeddings,
+  and provider-native forwarding through one loopback endpoint.
+- Refreshes remote catalogs on add, on Refresh models, after launch, and every 12 hours.
+- Provides weighted or failover Routes, scoped session credentials, gateway usage,
+  Diagnostics, and built-in Chat with optional workspace tools.
+- Keeps model calls on HTTP. Manifold does not sell, lease, or broker third-party
+  model tokens; upstream access and billing remain with each provider.
 
-## Downloads and releases
+Free includes 3 HTTP providers, 1 Route, 3 active session keys, and 7-day usage.
+Pro supports 10 HTTP providers, unlimited Routes and keys, Chat/Messages fallback,
+model aliases, policy management, 30-day usage, and agent write/edit tools.
+Browser-connected subscription accounts are available on both tiers.
 
-Public Manifold desktop downloads are published from this repository's latest
-GitHub Release:
+## Downloads
+
+Use the public release channel and product portal for installers:
 
 https://github.com/lingphi-ai/manifold-support/releases/latest
 
-The Lingphi portal also provides direct platform downloads:
+https://www.lingphi.com/manifold/#downloads
 
-https://www.lingphi.com/manifold/#download
-
-The public release channel is expected to provide macOS arm64, macOS x64,
-Windows x64, and Windows arm64 builds. Manifold is also distributed through the
-Mac App Store (a remote-only edition with StoreKit in-app purchase) and the
-Microsoft Store.
-
-Use those pages for public installers, archives, and user-visible release notes.
-The private Manifold source repository remains internal and should not be used as
-the public download destination.
+Release packages cover macOS arm64, macOS x64, Windows x64, and Windows arm64.
+Store editions have their own packaging and billing flows.
 
 ## Start here
 
-- [Quick start](quick-start.md): install, add a provider, and send the first
-  request.
-- [Concepts](concepts.md): understand the gateway, providers, model ids, Routes,
-  session keys, and usage records.
-- [Configuration](configuration.md): configure Gateway, Connect, Providers,
-  Routes, Usage, Diagnostics, Appearance, and About panels.
-- [API reference](api-reference.md): request paths, authentication, model
-  routing, streaming, embeddings, and native passthrough.
-- [Security](security.md): provider credential isolation, Local Session Keys,
-  URL safety, license boundaries, and non-resale positioning.
-- [Plans](plans.md): Free and Pro limits. Free allows one remote provider (local
-  CLI providers are unlimited); Pro ($2/year) adds up to 10 remote providers,
-  Routes, session keys, model aliases, and full usage history.
-- [Troubleshooting](troubleshooting.md): common setup and provider problems.
-- [Release notes](release-notes.md): product status, downloads, and changes.
+- [Quick start](quick-start.md): install, connect a provider, and make a request.
+- [Concepts](concepts.md): models, Routes, session keys, and gateway usage.
+- [Configuration](configuration.md): Settings and Chat.
+- [API reference](api-reference.md): endpoints and authentication.
+- [Security](security.md): credential storage and local boundaries.
+- [Plans](plans.md): Free and Pro capabilities.
+- [Troubleshooting](troubleshooting.md): setup and request failures.
+- [Release notes](release-notes.md): public release history.
 
 ## Support
 
-If the docs do not answer your question, open an issue from the repository's
-issue templates. Include your operating system, Manifold version, provider type,
-endpoint path, request format, response status, and the exact error message after
-redacting secrets.
-
-This repository is the support home for Manifold only. Keeping the docs scoped to
-one product makes it easier for users to search, follow issues, and maintain
-accurate setup instructions.
+Open an issue with the app version, operating system, provider type, endpoint,
+response status, and a redacted error. Never include keys, account tokens,
+private prompts, or raw provider responses.
