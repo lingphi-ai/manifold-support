@@ -51,11 +51,11 @@ const requiredBuiltFiles = [
 ];
 
 const mustMention = {
-  "README.md": ["Manifold", "docs/en", "docs/zh", "Issues", "127.0.0.1:17680", "npm run build", "v0.7.0", "Ollama", "LM Studio", "vLLM", "https://github.com/lingphi-ai/manifold-support/releases/latest", "https://www.lingphi.com/manifold/#downloads", "Release asset rule", "release-sync", "does not sell, lease, or broker"],
-  "docs/en/index.md": ["Manifold", "Quick start", "Support", "v0.7.0", "27 quick-add", "macOS arm64", "Windows arm64", "Ollama", "LM Studio", "vLLM", "every 12 hours", "does not sell, lease, or broker"],
-  "docs/zh/index.md": ["Manifold", "快速开始", "支持", "v0.7.0", "27 个 quick-add", "macOS arm64", "Windows arm64", "Ollama", "LM Studio", "vLLM", "每 12 小时", "不销售"],
-  "docs/en/quick-start.md": ["v0.7.0", "macOS Apple Silicon", "Windows x64", "Subscription", "Remote", "Custom", "Ollama", "LM Studio", "vLLM", "Refresh models", "mf_session_"],
-  "docs/zh/quick-start.md": ["v0.7.0", "macOS Apple Silicon", "Windows x64", "Subscription", "Remote", "Custom", "Ollama", "LM Studio", "vLLM", "Refresh models", "mf_session_"],
+  "README.md": ["Manifold", "docs/en", "docs/zh", "Issues", "127.0.0.1:17680", "npm run build", "v0.8.0", "Ollama", "LM Studio", "vLLM", "https://github.com/lingphi-ai/manifold-support/releases/latest", "https://www.lingphi.com/manifold/#downloads", "Release asset rule", "release-sync", "does not sell, lease, or broker"],
+  "docs/en/index.md": ["Manifold", "Quick start", "Support", "v0.8.0", "27 quick-add", "macOS arm64", "Windows arm64", "Ollama", "LM Studio", "vLLM", "every 12 hours", "does not sell, lease, or broker"],
+  "docs/zh/index.md": ["Manifold", "快速开始", "支持", "v0.8.0", "27 个 quick-add", "macOS arm64", "Windows arm64", "Ollama", "LM Studio", "vLLM", "每 12 小时", "不销售"],
+  "docs/en/quick-start.md": ["v0.8.0", "macOS Apple Silicon", "Windows x64", "Subscription", "Remote", "Custom", "Ollama", "LM Studio", "vLLM", "Refresh models", "mf_session_"],
+  "docs/zh/quick-start.md": ["v0.8.0", "macOS Apple Silicon", "Windows x64", "Subscription", "Remote", "Custom", "Ollama", "LM Studio", "vLLM", "Refresh models", "mf_session_"],
   "docs/en/concepts.md": ["127.0.0.1", "provider/model", "Routes", "failover", "weighted", "every 12 hours", "mf_session_"],
   "docs/zh/concepts.md": ["127.0.0.1", "provider/model", "Routes", "failover", "weighted", "每 12 小时", "mf_session_"],
   "docs/en/configuration.md": ["27 quick-add", "Ollama", "LM Studio", "vLLM", "remote or local-server provider", "Refresh models", "every 12 hours", "browser OAuth", "mf_session_", "app.log", "gateway.log"],

@@ -1,6 +1,6 @@
 # Quick Start
 
-This guide follows the current source package v0.7.0. Public installers may lag
+This guide follows the current source package v0.8.0. Public installers may lag
 source; use the release page or Lingphi portal to choose your platform:
 
 https://github.com/lingphi-ai/manifold-support/releases/latest
@@ -8,6 +8,10 @@ https://github.com/lingphi-ai/manifold-support/releases/latest
 https://www.lingphi.com/manifold/#downloads
 
 Packages cover macOS Apple Silicon, macOS Intel, Windows x64, and Windows arm64.
+
+The **0.8.0 source candidate** changes MAS Pro to a US$2.00-base permanent
+unlock. Its new binary and native purchase acceptance are pending. The 0.7.0
+TestFlight build below is the older annual-subscription binary. See [Plans](plans.md).
 
 ## Release status — 2026-11-01
 
@@ -20,7 +24,7 @@ Packages cover macOS Apple Silicon, macOS Intel, Windows x64, and Windows arm64.
   latest public release; they do not provide the private 0.7.0 store build.
 - Windows 0.7.0 has not completed a new build and native Store acceptance. The
   existing Microsoft Store listing does not establish 0.7.0 availability.
-- Current guides describe the 0.7.0 source. Claude and Gemini subscription OAuth
+- Current guides describe the 0.8.0 source. Claude and Gemini subscription OAuth
   have been removed; their API-key providers remain supported. Codex OAuth
   remains implemented, with OpenAI distribution approval still pending.
 - See [release notes](release-notes.md) for store gates and historical changes.

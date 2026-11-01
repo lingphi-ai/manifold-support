@@ -7,6 +7,14 @@ https://github.com/lingphi-ai/manifold-support/releases/latest
 
 私有 Manifold 源码仓库保持内部使用，不作为公开下载入口。
 
+## 0.8.0 候选版 — 商店一次性永久解锁
+
+源码将 MAS Pro 改为非消耗型永久解锁，SKU 为
+`com.lingphi.manifold.pro.lifetime`，美国基准价 $2.00。旧年度订阅退出审核草稿。
+新构建、真实购买／恢复／退款验收与加密合规仍待完成。0.7.0 TestFlight 包
+仍使用旧年度商品，不能作为新商品的送审包。GitHub 公开下载仍为 v0.6.0。
+官网／Microsoft Store 仍为 $2.99 一次付款、有效 365 天。
+
 ## 0.7.0 候选版 — 尚未公开发布
 
 核对日期：2026-11-01。源码／包版本：**0.7.0**。TestFlight 构建

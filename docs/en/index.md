@@ -1,8 +1,12 @@
 # Manifold Documentation
 
 Manifold is a desktop app and local HTTP gateway at `http://127.0.0.1:17680/v1`.
-These docs describe the current source implementation, package v0.7.0. Public
+These docs describe the current source implementation, package v0.8.0. Public
 installers may have a different version; check the release page before installing.
+
+The **0.8.0 source candidate** changes MAS Pro to a US$2.00-base permanent
+unlock. Its new binary and native purchase acceptance are pending. The 0.7.0
+TestFlight build below is the older annual-subscription binary. See [Plans](plans.md).
 
 ## Release status — 2026-11-01
 
@@ -15,7 +19,7 @@ installers may have a different version; check the release page before installin
   latest public release; they do not provide the private 0.7.0 store build.
 - Windows 0.7.0 has not completed a new build and native Store acceptance. The
   existing Microsoft Store listing does not establish 0.7.0 availability.
-- Current guides describe the 0.7.0 source. Claude and Gemini subscription OAuth
+- Current guides describe the 0.8.0 source. Claude and Gemini subscription OAuth
   have been removed; their API-key providers remain supported. Codex OAuth
   remains implemented, with OpenAI distribution approval still pending.
 - See [release notes](release-notes.md) for store gates and historical changes.

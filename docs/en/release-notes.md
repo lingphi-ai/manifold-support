@@ -8,6 +8,16 @@ https://github.com/lingphi-ai/manifold-support/releases/latest
 The private Manifold source repository remains internal and is not the public
 download destination.
 
+## 0.8.0 candidate — one-time App Store unlock
+
+The source changes MAS Pro to a non-consumable permanent unlock, SKU
+`com.lingphi.manifold.pro.lifetime`, US base price $2.00. The former annual
+subscription is withdrawn from the submission draft. The new binary, native
+purchase/restore/refund acceptance and encryption compliance remain pending.
+The 0.7.0 TestFlight binary still contains the old annual product and must not
+be submitted for the new product. Public GitHub downloads remain v0.6.0.
+Web/Microsoft Store billing remains $2.99 once for 365 days.
+
 ## 0.7.0 candidate — not publicly released
 
 Status checked: 2026-11-01. Source/package version: **0.7.0**. TestFlight:

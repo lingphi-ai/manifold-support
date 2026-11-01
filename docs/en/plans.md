@@ -31,13 +31,13 @@ account entitlements and model billing remain provider-specific.
 ## Purchase channels
 
 The direct-download and Microsoft Store app currently offers a $2.99 purchase
-valid for 365 days, without automatic renewal. The Mac App Store app uses
-StoreKit annual subscription billing; review the displayed store price and terms
-before purchasing. About contains the purchase and restore controls for the
+valid for 365 days, without automatic renewal. The Mac App Store 0.8.0 candidate uses a non-consumable one-time permanent
+unlock, with a US$2.00 base price and localized StoreKit pricing. It is not yet
+released; native purchase/restore acceptance is pending. About contains the purchase and restore controls for the
 installed edition.
 
 Manifold does not sell, lease, or broker provider tokens, bundle model credits,
 or replace an upstream provider account. Report a mismatch with the app version,
 license status, channel, and a redacted reproduction.
 
-For the current 0.7.0 store candidate, real StoreKit purchase/restore acceptance remains pending. See [release notes](release-notes.md).
+For the new 0.8.0 store candidate, real StoreKit purchase/restore acceptance remains pending. See [release notes](release-notes.md).

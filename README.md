@@ -9,12 +9,16 @@ HTTP API providers, local model servers such as Ollama, LM Studio, and vLLM, or
 browser-connected subscription accounts, then use the gateway from SDK clients.
 
 The maintained guides now follow the current source implementation (package
-`v0.7.0`). Public installer versions may differ; choose downloads from:
+`v0.8.0`). Public installer versions may differ; choose downloads from:
 
 https://github.com/lingphi-ai/manifold-support/releases/latest
 
 The current guides describe HTTP provider setup, browser OAuth, Free/Pro limits,
 Routes, Local Session Keys, gateway-only usage, and application/gateway Diagnostics.
+
+MAS billing update: **0.8.0 candidate** uses a non-consumable permanent unlock,
+US base price $2.00. New binary and native purchase/restore acceptance are pending;
+0.7.0 remains the historical annual-product TestFlight build.
 
 ## Release status — 2026-11-01
 
@@ -27,7 +31,7 @@ Routes, Local Session Keys, gateway-only usage, and application/gateway Diagnost
   latest public release; they do not provide the private 0.7.0 store build.
 - Windows 0.7.0 has not completed a new build and native Store acceptance. The
   existing Microsoft Store listing does not establish 0.7.0 availability.
-- Current guides describe the 0.7.0 source. Claude and Gemini subscription OAuth
+- Current guides describe the 0.8.0 source. Claude and Gemini subscription OAuth
   have been removed; their API-key providers remain supported. Codex OAuth
   remains implemented, with OpenAI distribution approval still pending.
 - See [release notes](docs/en/release-notes.md) for store gates and historical changes.
