@@ -14,6 +14,8 @@ MAS 通过原生 StoreKit 2 在本机验证，不再依赖 Lingphi 授权服务�
 
 ## 发布状态 — 2026-11-01
 
+- **0.8.0 (0.8.0)**：原生 StoreKit 2 通用构建已交付 Apple，正在处理；尚未公开发布，也不代表真实内购验收通过。
+
 - **0.7.0 尚未公开发布。** 通用 macOS 商店构建 0.7.0 (0.7.0) 已上传
   TestFlight 并处理完成，但状态仍为 **Missing Compliance**。尚未完成可用的
   私有 TestFlight 安装及真实 StoreKit 购买／恢复验收。
