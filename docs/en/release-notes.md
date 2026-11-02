@@ -10,13 +10,13 @@ download destination.
 
 ## StoreKit 2 migration — 2026-11-01
 
-The 0.8.0 MAS candidate now uses native StoreKit 2 on-device verification. No Lingphi receipt server or licensing identity is used. Direct downloads are retired; Windows retains its licensing service. Real TestFlight purchase/restore and encryption compliance remain release gates. Historical release notes below describe their original implementations.
+The 0.8.0 MAS candidate now uses native StoreKit 2 on-device verification. No Lingphi receipt server or licensing identity is used. Direct downloads are retired; Windows retains its licensing service. Real TestFlight purchase/restore and privacy-label reconciliation remain release gates; the 0.8.0 encryption questionnaire is cleared for distribution excluding France. Historical release notes below describe their original implementations.
 
 ## 0.8.0 candidate — one-time App Store unlock
 
 The source changes MAS Pro to a non-consumable permanent unlock, SKU
 `com.lingphi.manifold.pro.lifetime`, US base price $2.00. The former annual
-subscription is withdrawn from the submission draft. The universal 0.8.0 (0.8.0) binary was delivered to Apple on November 1, 2026 and is processing. Native purchase/restore/refund acceptance and encryption compliance remain pending.
+subscription is withdrawn from the submission draft. The universal 0.8.0 (0.8.0) binary is processed and Ready to Test internally. App and lifetime-IAP availability exclude France (174 regions); the build’s Missing Compliance gate is cleared. Real purchase/restore/refund acceptance and privacy-label reconciliation remain pending.
 The 0.7.0 TestFlight binary still contains the old annual product and must not
 be submitted for the new product. Historical GitHub releases remain archived at v0.6.0; direct downloads are retired. Microsoft Store billing remains $2.99 once for 365 days. MAS verifies ownership on-device with native StoreKit 2.
 

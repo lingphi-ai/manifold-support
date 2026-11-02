@@ -9,7 +9,7 @@ TestFlight build below is the older annual-subscription binary. See [Plans](plan
 
 ## Release status — 2026-11-01
 
-- **0.8.0 (0.8.0)**: the universal native StoreKit 2 build was delivered to Apple; processing is pending. This is not a public release or purchase acceptance.
+- **0.8.0 (0.8.0)**: the universal native StoreKit 2 build is processed and Ready to Test internally. France is excluded from app and IAP availability; its Missing Compliance gate was cleared with the truthful encryption questionnaire. This is not a public release or purchase acceptance.
 
 - **0.7.0 is not a public release.** The universal macOS App Store build
   0.7.0 (0.7.0) has been uploaded and processed in TestFlight, but remains

@@ -21,7 +21,7 @@ The current guides describe HTTP provider setup, browser OAuth, Free/Pro limits,
 Routes, Local Session Keys, gateway-only usage, and application/gateway Diagnostics.
 
 MAS billing update: **0.8.0 candidate** uses a non-consumable permanent unlock,
-US base price $2.00. Universal 0.8.0 (0.8.0) was delivered to Apple on November 1, 2026 and is processing; native purchase/restore acceptance remains pending;
+US base price $2.00. Universal 0.8.0 (0.8.0) is processed and Ready to Test internally, with France excluded and the build compliance questionnaire cleared; native purchase/restore and privacy-label acceptance remain pending;
 0.7.0 remains the historical annual-product TestFlight build.
 
 ## Release status — 2026-11-01
