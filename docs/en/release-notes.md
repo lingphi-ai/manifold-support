@@ -1,7 +1,7 @@
 # Release Notes
 
-Public Manifold installers, archives, and user-visible release notes are
-published from the latest manifold-support release:
+Direct-download installers are retired. Historical installer archives and their
+original release notes remain at the latest archived manifold-support release:
 
 https://github.com/lingphi-ai/manifold-support/releases/latest
 
@@ -10,17 +10,17 @@ download destination.
 
 ## StoreKit 2 migration — 2026-11-01
 
-The 0.8.0 MAS candidate now uses native StoreKit 2 on-device verification. No Lingphi receipt server or licensing identity is used. Direct downloads are retired; Windows retains its licensing service. Real TestFlight purchase/restore and privacy-label reconciliation remain release gates; the 0.8.0 encryption questionnaire is cleared for distribution excluding France. Historical release notes below describe their original implementations.
+The 0.8.0 MAS candidate now uses native StoreKit 2 on-device verification. No Lingphi receipt server or licensing identity is used. Direct downloads are retired; Windows retains its licensing service. The revised App Store privacy labels and bilingual notice are published. Real TestFlight purchase/restore remains a release gate; the 0.8.0 encryption questionnaire is cleared for distribution excluding France. Historical release notes below describe their original implementations.
 
 ## 0.8.0 candidate — one-time App Store unlock
 
 The source changes MAS Pro to a non-consumable permanent unlock, SKU
 `com.lingphi.manifold.pro.lifetime`, US base price $2.00. The former annual
-subscription is withdrawn from the submission draft. The universal 0.8.0 (0.8.0) binary is processed and Ready to Test internally. App and lifetime-IAP availability exclude France (174 regions); the build’s Missing Compliance gate is cleared. Real purchase/restore/refund acceptance and privacy-label reconciliation remain pending.
+subscription is withdrawn from the submission draft. The universal 0.8.0 (0.8.0) binary is processed and Ready to Test internally. App and lifetime-IAP availability exclude France (174 regions); the build’s Missing Compliance gate is cleared. The current build has been installed through TestFlight and attached to the 0.8.0 submission draft. Native purchase/restore/refund acceptance remains pending; 0.8.0 is not publicly released. Published MAS privacy labels are User ID and Other User Content, for App Functionality, linked to identity, not used for tracking. The former licensing Device ID and Purchase History categories have been removed.
 The 0.7.0 TestFlight binary still contains the old annual product and must not
 be submitted for the new product. Historical GitHub releases remain archived at v0.6.0; direct downloads are retired. Microsoft Store billing remains $2.99 once for 365 days. MAS verifies ownership on-device with native StoreKit 2.
 
-## 0.7.0 candidate — not publicly released
+## Historical 0.7.0 candidate — not publicly released
 
 Status checked: 2026-11-01. Source/package version: **0.7.0**. TestFlight:
 **0.7.0 (0.7.0), Missing Compliance**. Upload and processing are complete;
@@ -35,7 +35,7 @@ Current implementation removes local executable integration and Claude/Gemini
 subscription OAuth; ordinary API-key and local HTTP model-server access remain.
 Codex OAuth remains implemented, pending OpenAI distribution approval.
 
-### Store release gates
+### Historical 0.7.0 store release gates
 
 - Resolve Apple encryption compliance and France documentation; France remains
   in scope and no approval or exemption is claimed.

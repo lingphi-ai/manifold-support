@@ -21,7 +21,7 @@ The current guides describe HTTP provider setup, browser OAuth, Free/Pro limits,
 Routes, Local Session Keys, gateway-only usage, and application/gateway Diagnostics.
 
 MAS billing update: **0.8.0 candidate** uses a non-consumable permanent unlock,
-US base price $2.00. Universal 0.8.0 (0.8.0) is processed and Ready to Test internally, with France excluded and the build compliance questionnaire cleared; native purchase/restore and privacy-label acceptance remain pending;
+US base price $2.00. Universal 0.8.0 (0.8.0) is processed and Ready to Test internally, with France excluded and the build compliance questionnaire cleared; native purchase/restore remains pending, while revised privacy labels are published and the current build is installed via TestFlight and attached to the submission draft;
 0.7.0 remains the historical annual-product TestFlight build.
 
 ## Release status — 2026-11-01

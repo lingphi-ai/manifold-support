@@ -1,7 +1,7 @@
 # 发布说明
 
-Manifold 的公开安装包、压缩包和用户可见的发布说明发布在
-manifold-support latest Release：
+官网直装安装包停止提供。历史安装包归档及对应版本的原始发布说明保留在
+manifold-support 历史 latest Release：
 
 https://github.com/lingphi-ai/manifold-support/releases/latest
 
@@ -9,16 +9,16 @@ https://github.com/lingphi-ai/manifold-support/releases/latest
 
 ## StoreKit 2 迁移 — 2026-11-01
 
-0.8.0 MAS 候选版改为原生 StoreKit 2 本机验证，不再依赖 Lingphi 收据服务器或授权设备身份。官网直装版停止提供；Windows 保留现有授权服务。真实 TestFlight 购买／恢复及隐私标签调整仍是发布门槛；0.8.0 已按排除法国的销售范围完成加密问卷。下方历史说明保留对应版本当时的实现。
+0.8.0 MAS 候选版改为原生 StoreKit 2 本机验证，不再依赖 Lingphi 收据服务器或授权设备身份。官网直装版停止提供；Windows 保留现有授权服务。调整后的 App Store 隐私标签及中英文说明已发布，真实 TestFlight 购买／恢复仍是发布门槛；0.8.0 已按排除法国的销售范围完成加密问卷。下方历史说明保留对应版本当时的实现。
 
 ## 0.8.0 候选版 — 商店一次性永久解锁
 
 源码将 MAS Pro 改为非消耗型永久解锁，SKU 为
 `com.lingphi.manifold.pro.lifetime`，美国基准价 $2.00。旧年度订阅退出审核草稿。
-通用构建 0.8.0 (0.8.0) 已处理完成，可供内部测试。应用与永久内购均排除法国（174 个地区），该构建的加密问卷阻塞已解除。真实购买／恢复／退款验收和隐私标签调整仍待完成。0.7.0 TestFlight 包
+通用构建 0.8.0 (0.8.0) 已处理完成，可供内部测试。应用与永久内购均排除法国（174 个地区），该构建的加密问卷阻塞已解除。当前构建已通过 TestFlight 安装，并关联到 0.8.0 提审草稿。真实购买／恢复／退款验收仍待完成，0.8.0 尚未公开发布。MAS 隐私标签现为用户 ID 和其他用户内容：应用功能、关联身份、不用于追踪；已移除旧授权流程的设备 ID 与购买记录分类。0.7.0 TestFlight 包
 仍使用旧年度商品，不能作为新商品的送审包。GitHub v0.6.0 仅保留历史归档，官网直装版停止提供。Microsoft Store 仍为 $2.99 一次付款、有效 365 天；MAS 改为原生 StoreKit 2 本机验证。
 
-## 0.7.0 候选版 — 尚未公开发布
+## 历史 0.7.0 候选版 — 尚未公开发布
 
 核对日期：2026-11-01。源码／包版本：**0.7.0**。TestFlight 构建
 **0.7.0 (0.7.0)** 已上传并处理，状态为 **Missing Compliance**；尚未完成
@@ -31,7 +31,7 @@ https://github.com/lingphi-ai/manifold-support/releases/latest
 当前实现已移除本地可执行程序集成及 Claude/Gemini 订阅 OAuth，保留普通 API
 密钥与本地 HTTP 模型服务器接入。Codex OAuth 实现保留，OpenAI 分发授权待取得。
 
-### 上架待办
+### 0.7.0 当时的上架待办
 
 - 完成 Apple 加密合规及法国材料；保留法国市场，尚无批准或豁免结论。
 - 在实际生产 Gateway 配置收据共享密钥；旧 License Worker 的配置不会继承。
