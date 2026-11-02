@@ -1,7 +1,6 @@
 # 快速开始
 
-本指南依据当前源码包 v0.8.0。公开安装包可能晚于源码，请从发布页面或产品入口
-选择适合的平台：
+本指南依据当前源码包 v0.8.0。官网直装版已停止提供，请在产品入口核对 Microsoft Store 及待发布的 Mac App Store 状态；GitHub 仅保留历史记录：
 
 https://github.com/lingphi-ai/manifold-support/releases/latest
 
@@ -10,7 +9,7 @@ https://www.lingphi.com/manifold/#downloads
 平台包括 macOS Apple Silicon、macOS Intel、Windows x64 和 Windows arm64。
 
 **0.8.0 源码候选版**将 MAS Pro 改为一次性永久解锁，美国基准价 US$2.00。
-新构建和真实内购验收待完成。下方 0.7.0 TestFlight 状态属于旧年度订阅构建。
+MAS 通过原生 StoreKit 2 在本机验证，不再依赖 Lingphi 授权服务器；真实内购验收仍待完成。下方 0.7.0 TestFlight 状态属于旧年度订阅构建。
 详见[版本与计划](plans.md)。
 
 ## 发布状态 — 2026-11-01
@@ -19,7 +18,7 @@ https://www.lingphi.com/manifold/#downloads
   TestFlight 并处理完成，但状态仍为 **Missing Compliance**。尚未完成可用的
   私有 TestFlight 安装及真实 StoreKit 购买／恢复验收。
 - 当日核对的 GitHub 最新公开版为 **v0.6.0**，包含 macOS arm64/x64 DMG 和
-  Windows x64/arm64 ZIP。以下下载入口跟随最新公开版，不提供私有 0.7.0 商店包。
+  Windows x64/arm64 ZIP。这些仅为历史归档；官网直装版已停止提供，不提供私有商店构建。
 - Windows 0.7.0 尚未完成新构建及原生商店验收；已有 Microsoft Store 页面
   不代表 0.7.0 已在该商店上架。
 - 当前指南描述 0.8.0 源码。Claude 和 Gemini 订阅 OAuth 已移除，API 密钥接入

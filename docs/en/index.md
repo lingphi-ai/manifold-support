@@ -1,11 +1,10 @@
 # Manifold Documentation
 
 Manifold is a desktop app and local HTTP gateway at `http://127.0.0.1:17680/v1`.
-These docs describe the current source implementation, package v0.8.0. Public
-installers may have a different version; check the release page before installing.
+These docs describe the current source implementation, package v0.8.0. Direct-download distribution is retired; use the store availability links below.
 
 The **0.8.0 source candidate** changes MAS Pro to a US$2.00-base permanent
-unlock. Its new binary and native purchase acceptance are pending. The 0.7.0
+unlock. MAS uses on-device native StoreKit 2 verification, without the Lingphi License Server. Native purchase acceptance remains pending. The 0.7.0
 TestFlight build below is the older annual-subscription binary. See [Plans](plans.md).
 
 ## Release status — 2026-11-01
@@ -15,8 +14,7 @@ TestFlight build below is the older annual-subscription binary. See [Plans](plan
   **Missing Compliance**. No usable private TestFlight installation or real
   StoreKit purchase/restore acceptance is claimed.
 - The latest public GitHub release checked on this date is **v0.6.0**, with macOS
-  arm64/x64 DMGs and Windows x64/arm64 ZIPs. The download links below follow the
-  latest public release; they do not provide the private 0.7.0 store build.
+  arm64/x64 DMGs and Windows x64/arm64 ZIPs. These are historical archives, not the current distribution channel. Direct downloads are retired.
 - Windows 0.7.0 has not completed a new build and native Store acceptance. The
   existing Microsoft Store listing does not establish 0.7.0 availability.
 - Current guides describe the 0.8.0 source. Claude and Gemini subscription OAuth
@@ -45,7 +43,7 @@ Browser-connected subscription accounts are available on both tiers.
 
 ## Downloads
 
-Use the public release channel and product portal for installers:
+Use the product portal to check Microsoft Store availability and the pending Mac App Store release. The GitHub release link is historical only:
 
 https://github.com/lingphi-ai/manifold-support/releases/latest
 

@@ -22,7 +22,7 @@ Ollama, LM Studio, and vLLM.
 - Session policies, project labels, route/provider scope, pairing, bulk revoke,
   request attribution, and audit access.
 - 30-day gateway usage history and agent write/edit tools.
-- License restoration and device management.
+- Purchase restoration; Windows license device management.
 
 Remote caps include hosted API presets and local-server presets. Browser OAuth
 accounts are outside that cap. Limits are enforced by the application; upstream
@@ -30,7 +30,7 @@ account entitlements and model billing remain provider-specific.
 
 ## Purchase channels
 
-The direct-download and Microsoft Store app currently offers a $2.99 purchase
+Direct-download distribution is retired. The Microsoft Store app offers a $2.99 purchase
 valid for 365 days, without automatic renewal. The Mac App Store 0.8.0 candidate uses a non-consumable one-time permanent
 unlock, with a US$2.00 base price and localized StoreKit pricing. It is not yet
 released; native purchase/restore acceptance is pending. About contains the purchase and restore controls for the
@@ -41,3 +41,5 @@ or replace an upstream provider account. Report a mismatch with the app version,
 license status, channel, and a redacted reproduction.
 
 For the new 0.8.0 store candidate, real StoreKit purchase/restore acceptance remains pending. See [release notes](release-notes.md).
+
+The MAS candidate verifies Apple-signed transactions on-device using StoreKit 2. It never sends receipts or licensing device identifiers to Lingphi, and does not use server-issued entitlement tokens. Restore Purchases uses the same Apple Account. Windows and existing direct-download users retain the existing licensing service.

@@ -1,3 +1,7 @@
+# Distribution update — 2026-11-01
+
+Direct-download builds are retired. Windows uses Microsoft Store; MAS 0.8.0 uses native StoreKit 2 verification and awaits store acceptance. Existing direct-download licenses remain supported. Historical release assets below are archives.
+
 # Manifold Support
 
 Public documentation and support intake for **Manifold**, the AI Model Hub from
@@ -9,7 +13,7 @@ HTTP API providers, local model servers such as Ollama, LM Studio, and vLLM, or
 browser-connected subscription accounts, then use the gateway from SDK clients.
 
 The maintained guides now follow the current source implementation (package
-`v0.8.0`). Public installer versions may differ; choose downloads from:
+`v0.8.0`). Direct downloads are retired; use the product page for store availability. This link is a historical release archive:
 
 https://github.com/lingphi-ai/manifold-support/releases/latest
 
@@ -27,8 +31,7 @@ US base price $2.00. New binary and native purchase/restore acceptance are pendi
   **Missing Compliance**. No usable private TestFlight installation or real
   StoreKit purchase/restore acceptance is claimed.
 - The latest public GitHub release checked on this date is **v0.6.0**, with macOS
-  arm64/x64 DMGs and Windows x64/arm64 ZIPs. The download links below follow the
-  latest public release; they do not provide the private 0.7.0 store build.
+  arm64/x64 DMGs and Windows x64/arm64 ZIPs. These are historical archives; the product portal no longer offers direct installers.
 - Windows 0.7.0 has not completed a new build and native Store acceptance. The
   existing Microsoft Store listing does not establish 0.7.0 availability.
 - Current guides describe the 0.8.0 source. Claude and Gemini subscription OAuth

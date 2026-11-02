@@ -8,6 +8,10 @@ https://github.com/lingphi-ai/manifold-support/releases/latest
 The private Manifold source repository remains internal and is not the public
 download destination.
 
+## StoreKit 2 migration — 2026-11-01
+
+The 0.8.0 MAS candidate now uses native StoreKit 2 on-device verification. No Lingphi receipt server or licensing identity is used. Direct downloads are retired; Windows retains its licensing service. Real TestFlight purchase/restore and encryption compliance remain release gates. Historical release notes below describe their original implementations.
+
 ## 0.8.0 candidate — one-time App Store unlock
 
 The source changes MAS Pro to a non-consumable permanent unlock, SKU
@@ -15,8 +19,7 @@ The source changes MAS Pro to a non-consumable permanent unlock, SKU
 subscription is withdrawn from the submission draft. The new binary, native
 purchase/restore/refund acceptance and encryption compliance remain pending.
 The 0.7.0 TestFlight binary still contains the old annual product and must not
-be submitted for the new product. Public GitHub downloads remain v0.6.0.
-Web/Microsoft Store billing remains $2.99 once for 365 days.
+be submitted for the new product. Historical GitHub releases remain archived at v0.6.0; direct downloads are retired. Microsoft Store billing remains $2.99 once for 365 days. MAS verifies ownership on-device with native StoreKit 2.
 
 ## 0.7.0 candidate — not publicly released
 

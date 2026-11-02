@@ -46,5 +46,5 @@ Usage & Cost summarizes only the gateway's own request ledger. Free retains
 
 Appearance applies light/dark glass themes, accent, density, text size, and
 English/Chinese language changes. About handles licenses, purchases, restoration,
-and device management. Direct-download and Microsoft Store builds use web
-checkout; the Mac App Store build uses StoreKit. See [Plans](plans.md).
+and device management. Microsoft Store and existing direct-download installations use web
+checkout; the Mac App Store candidate uses native StoreKit 2 verification on-device, without the License Server. Direct downloads are retired. See [Plans](plans.md).

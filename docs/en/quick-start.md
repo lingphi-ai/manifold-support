@@ -1,7 +1,6 @@
 # Quick Start
 
-This guide follows the current source package v0.8.0. Public installers may lag
-source; use the release page or Lingphi portal to choose your platform:
+This guide follows the current source package v0.8.0. Direct downloads are retired; use the Lingphi product portal for store availability. This release link is historical only:
 
 https://github.com/lingphi-ai/manifold-support/releases/latest
 
@@ -10,7 +9,7 @@ https://www.lingphi.com/manifold/#downloads
 Packages cover macOS Apple Silicon, macOS Intel, Windows x64, and Windows arm64.
 
 The **0.8.0 source candidate** changes MAS Pro to a US$2.00-base permanent
-unlock. Its new binary and native purchase acceptance are pending. The 0.7.0
+unlock. MAS uses on-device native StoreKit 2 verification, without the Lingphi License Server. Native purchase acceptance remains pending. The 0.7.0
 TestFlight build below is the older annual-subscription binary. See [Plans](plans.md).
 
 ## Release status — 2026-11-01
@@ -20,8 +19,7 @@ TestFlight build below is the older annual-subscription binary. See [Plans](plan
   **Missing Compliance**. No usable private TestFlight installation or real
   StoreKit purchase/restore acceptance is claimed.
 - The latest public GitHub release checked on this date is **v0.6.0**, with macOS
-  arm64/x64 DMGs and Windows x64/arm64 ZIPs. The download links below follow the
-  latest public release; they do not provide the private 0.7.0 store build.
+  arm64/x64 DMGs and Windows x64/arm64 ZIPs. These are historical archives, not the current distribution channel. Direct downloads are retired.
 - Windows 0.7.0 has not completed a new build and native Store acceptance. The
   existing Microsoft Store listing does not establish 0.7.0 availability.
 - Current guides describe the 0.8.0 source. Claude and Gemini subscription OAuth

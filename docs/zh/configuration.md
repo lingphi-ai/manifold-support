@@ -42,5 +42,5 @@ Chat/Messages 可重试失败后的跨供应商回退和模型别名需要 Pro�
 ## 外观与账户
 
 外观页即时应用浅色/深色毛玻璃主题、强调色、密度、字号和中英文切换。
-关于页提供许可证、购买、恢复和设备管理。直接下载与 Microsoft Store 版本
-使用网页结算，Mac App Store 版本使用 StoreKit。详见[版本与计划](plans.md)。
+关于页提供购买及恢复。Microsoft Store 与已有官网版使用网页结算及授权设备管理；
+MAS 0.8.0 候选版通过原生 StoreKit 2 本机验证，不依赖 Lingphi 授权服务。官网直装版停止提供。详见[版本与计划](plans.md)。
